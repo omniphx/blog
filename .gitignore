@@ -10,5 +10,5 @@ Thumbs.db
 /node_modules
 *.mm
 /app/config/local
-/public/styles/
-/public/scripts/
+/public/assets/styles
+/public/assets/scripts
