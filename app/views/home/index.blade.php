@@ -21,7 +21,12 @@
             </p>
             <hr>
             <p>
-                <span class="glyphicon glyphicon-time"></span> Posted on {{$post->created_at}}</p>
+                <span class="glyphicon glyphicon-time"></span> Posted on {{date("F nS\, Y \a\\t g:i a",strtotime($post->created_at))}}
+                &nbsp;
+                <span class="glyphicon glyphicon-tags"></span>&nbsp; Tags: 
+                @foreach ($post->tags as $tag)
+                <a href="#">{{$tag->name}}</a>
+                @endforeach</p>
             <hr>
             <img src="http://placehold.it/900x300" class="img-responsive">
             <hr>
@@ -58,7 +63,7 @@
             </div>
             <!-- /well -->
             <div class="well">
-                <h4>Popular Blog Categories</h4>
+                <h4>Tags</h4>
                 <div class="row">
                     <div class="col-lg-6">
                         <ul class="list-unstyled">
