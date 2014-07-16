@@ -9,8 +9,8 @@ class Post extends \Eloquent
 		return $this->hasMany('Comment');
 	}
 
-	// public function tags()
-	// {
-	// 	return $this->belongsToMany('Tags')
-	// }
+	public function tags()
+	{
+		return $this->belongsToMany('Tag');
+	}
 }
