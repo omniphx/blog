@@ -6,49 +6,79 @@
 
 {{-- Content --}}
 @section('container')
-@foreach ($posts as $post)
-<div class="row">
-	<div class="col-md-8">
-		<!-- Post Title -->
-		<div class="row">
-			<div class="col-md-8">
-				<h4><strong><a href="#">{{ $post->title }}</a></strong></h4>
-			</div>
-		</div>
-		<!-- ./ post title -->
+    
+    <div class="row">
+        <div class="col-lg-8">
 
-		<!-- Post Content -->
-		<div class="row">
-			<div class="col-md-2">
-				<a href="#" class="thumbnail"><img src="http://placehold.it/260x180" alt=""></a>
-			</div>
-			<div class="col-md-6">
-				<p>
-					{{ $post->body }}
-				</p>
-				<p><a class="btn btn-mini btn-default" href="#">Read more</a></p>
-			</div>
-		</div>
-		<!-- ./ post content -->
+            <!-- Blog entry -->
+            @foreach ($posts as $post)
 
-		<!-- Post Footer -->
-		<div class="row">
-			<div class="col-md-8">
-				<p></p>
-				<p>
-					<span class="glyphicon glyphicon-user"></span> by <span class="muted">{{$post->author}}</span>
-					| <span class="glyphicon glyphicon-calendar"></span> <!--Sept 16th, 2012-->{{{ $post->created_at }}}
-					| <span class="glyphicon glyphicon-comment"></span> <a href="#">{{$post->comments()->count()}} {{ \Illuminate\Support\Pluralizer::plural('Comment', $post->comments()->count()) }}</a>
-				</p>
-			</div>
+            <!-- Post Title -->
+            <h1><a href="#">{{ $post->title }}</a>
+            </h1>
+
+            <p class="lead">by <a href="index.php">{{$post->author}}</a>
+            </p>
+            <hr>
+            <p>
+                <span class="glyphicon glyphicon-time"></span> Posted on {{$post->created_at}}</p>
+            <hr>
+            <img src="http://placehold.it/900x300" class="img-responsive">
+            <hr>
+            <p>{{ $post->body }}</p>
+            <a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+            <a class="btn btn-primary" href="#">{{$post->comments()->count()}} {{ \Illuminate\Support\Pluralizer::plural('Comment', $post->comments()->count()) }} <span class="glyphicon glyphicon-comment"></span></a>
+
+            <hr>
+
+            @endforeach
+            <!-- End of blog entry -->
+
+            <!-- pager -->
+            <ul class="pager">
+                <li class="previous"><a href="#">&larr; Older</a>
+                </li>
+                <li class="next"><a href="#">Newer &rarr;</a>
+                </li>
+            </ul>
 		</div>
-		<!-- ./ post footer -->
+
+        <div class="col-lg-4">
+            <div class="well">
+                <h4>Blog Search</h4>
+                <div class="input-group">
+                    <input type="text" class="form-control">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+                </div>
+                <!-- /input-group -->
+            </div>
+            <!-- /well -->
+            <div class="well">
+                <h4>Popular Blog Categories</h4>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <ul class="list-unstyled">
+                            @foreach ($tags as $tag)
+                            <li><a href="#">{{$tag->name}}</a>
+                            </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- /well -->
+            <div class="well">
+                <h4>Side Widget Well</h4>
+                <p>Bootstrap's default wells work great for side widgets! What is a widget anyways...?</p>
+            </div>
+            <!-- /well -->
+        </div>
 	</div>
-</div>
 
-<hr />
-@endforeach
-
-{{ $posts->links() }}
+	<hr />
 
 @stop

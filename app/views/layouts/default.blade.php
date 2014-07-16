@@ -17,11 +17,15 @@
     <![endif]-->
   </head>
 	<body>
-		@include('layouts.navbar')
-		@yield('container')
-		@yield('footer')
 
-    {{ HTML::script(asset('assets/javascript/built.js')) }}
+    @include('layouts.navbar')
+    <div class="container">
+      @yield('container')
+      @include('layouts.footer')
+    </div>
 
 	</body>
+
+  {{ HTML::script(asset('assets/javascript/built.js')) }}
+
 </html>
