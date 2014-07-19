@@ -3,8 +3,9 @@
 class Tag extends \Eloquent {
 	protected $fillable = [];
 
-	public function tags()
+	public function posts()
 	{
 		return $this->belongsToMany('Post');
 	}
+
 }

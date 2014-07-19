@@ -14,9 +14,29 @@
 use Faker\Factory as Faker;
 
 Route::get('/', array('as' => 'home', 'uses' => 'HomeController@index'));
+Route::get('/about', array('as' => 'about', 'uses' => 'HomeController@about'));
+Route::get('/services', array('as' => 'services', 'uses' => 'HomeController@services'));
+Route::get('/contact', array('as' => 'contact', 'uses' => 'HomeController@contact'));
 
-Route::get('/faker', function(){
-	$generator = Faker::create();
+Route::resource('post', 'PostsController',
+	array('only' => array('index', 'show')));
 
-	return $generator->paragraph($nbSentences = 2);
+Route::resource('tag', 'TagsController',
+	array('only' => array('index', 'show')));
+
+Route::resource('author', 'AuthorsController',
+	array('only' => array('index', 'show')));
+
+Route::get('/test', function(){
+	$tag = Tag::find(1);
+	foreach ($tag->posts as $post) {
+		echo $post->title;
+	}
+});
+
+Route::get('/test2', function(){
+	$post = Post::find(1);
+	foreach ($post->tags as $tag) {
+		echo $tag->name;
+	}
 });

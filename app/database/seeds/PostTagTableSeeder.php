@@ -11,11 +11,11 @@ class PostTagTableSeeder extends Seeder {
 
 		$post_tag = array();
 
-		foreach(range(1, 30) as $index)
+		foreach(range(1, 150) as $index)
 		{
 			$row = array(
-				'post_id' => $faker->randomNumber(0, 10),
-				'tag_id' => $faker->randomNumber(0, 10),
+				'post_id' => $faker->randomNumber(1, 50),
+				'tag_id' => $faker->randomNumber(1, 25),
 				'created_at' => new DateTime,
 				'updated_at' => new DateTime
 			);

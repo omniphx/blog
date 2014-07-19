@@ -9,12 +9,13 @@ class PostsTableSeeder extends Seeder {
 	{
 		$faker = Faker::create();
 
-		foreach(range(1, 10) as $index)
+		foreach(range(1, 50) as $index)
 		{
 			Post::create([
 				'title' => $faker->sentence(),
-				'body' => $faker->paragraph($nbSentences = 3),
-				'author' => $faker->name(),
+				'body' => $faker->paragraph($nbSentences = 15),
+				'author_id' => $faker->randomNumber(1, 10),
+				'created_at' => $faker->dateTime($max = 'now')
 			]);
 		}
 	}

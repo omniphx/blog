@@ -13,4 +13,14 @@ class Post extends \Eloquent
 	{
 		return $this->belongsToMany('Tag');
 	}
+
+	public function author()
+	{
+		return $this->belongsTo('Author');
+	}
+
+	public function scopeSearch($query, $search)
+	{
+		return $query->where('title','LIKE',"%$search%");
+	}
 }

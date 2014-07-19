@@ -3,16 +3,16 @@
 // Composer: "fzaninotto/faker": "v1.3.0"
 use Faker\Factory as Faker;
 
-class TagsTableSeeder extends Seeder {
+class AuthorsTableSeeder extends Seeder {
 
 	public function run()
 	{
 		$faker = Faker::create();
 
-		foreach(range(1, 25) as $index)
+		foreach(range(1, 10) as $index)
 		{
-			Tag::create([
-				'name' => $faker->unique()->word
+			Author::create([
+				'name' => $faker->name()
 			]);
 		}
 	}

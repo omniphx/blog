@@ -1,6 +1,12 @@
 <?php
 
-class TagsController extends \BaseController {
+class PostsController extends \BaseController {
+
+	/**
+	 * Post Model
+	 * @var Post
+	 */
+	protected $post;
 
 	/**
 	 * Tag Model
@@ -10,29 +16,37 @@ class TagsController extends \BaseController {
 
 	/**
 	 * Inject the models
-	 * @param Tag    $tag    
+	 * @param Post $post
+	 * @param Tag  $tag
 	 */
-	public function __construct(Tag $tag)
+	public function __construct(Post $post, Tag $tag)
 	{
+		$this->post = $post;
 		$this->tag = $tag;
 	}
 
 	/**
 	 * Display a listing of the resource.
-	 * GET /tags
+	 * GET /posts
 	 *
 	 * @return Response
 	 */
 	public function index()
 	{
+		$query = Request::get('q');
+
+		$posts = $query
+			? $this->post->search($query)->orderBy('created_at', 'DESC')->paginate(10)
+			: $this->post->orderBy('created_at', 'DESC')->paginate(10);
+
 		$tags = $this->tag->all();
 
-		return View::make('tags.index',compact('tags'));
+		return View::make('posts.index', compact('posts','tags','query'));
 	}
 
 	/**
 	 * Show the form for creating a new resource.
-	 * GET /tags/create
+	 * GET /posts/create
 	 *
 	 * @return Response
 	 */
@@ -43,7 +57,7 @@ class TagsController extends \BaseController {
 
 	/**
 	 * Store a newly created resource in storage.
-	 * POST /tags
+	 * POST /posts
 	 *
 	 * @return Response
 	 */
@@ -54,23 +68,25 @@ class TagsController extends \BaseController {
 
 	/**
 	 * Display the specified resource.
-	 * GET /tags/{id}
+	 * GET /posts/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response
 	 */
 	public function show($id)
 	{
+		$post = $this->post->find($id);
 		$tags = $this->tag->all();
-		$tag = $this->tag->find($id);
-		$posts = $tag->posts()->paginate(10);
+		$comments = array_values(array_sort($post->comments, function($value){
+			return $value['created_at'];
+		}));
 
-		return View::make('tags.show', compact('tags', 'tag', 'posts'));
+		return View::make('posts.show', compact('post', 'tags', 'comments'));
 	}
 
 	/**
 	 * Show the form for editing the specified resource.
-	 * GET /tags/{id}/edit
+	 * GET /posts/{id}/edit
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -82,7 +98,7 @@ class TagsController extends \BaseController {
 
 	/**
 	 * Update the specified resource in storage.
-	 * PUT /tags/{id}
+	 * PUT /posts/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -94,7 +110,7 @@ class TagsController extends \BaseController {
 
 	/**
 	 * Remove the specified resource from storage.
-	 * DELETE /tags/{id}
+	 * DELETE /posts/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response
