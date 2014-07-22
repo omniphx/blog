@@ -18,7 +18,7 @@
             <div class="col-lg-6">
                 <ul class="list-unstyled">
                     @foreach ($tags as $tag)
-                    <li><a href="{{ route('tag.show',$tag->id) }}">{{$tag->name}}</a>
+                    <li><a href="{{ route('tag.show',$tag->slug) }}">{{$tag->name}}</a>
                     </li>
                     @endforeach
                 </ul>

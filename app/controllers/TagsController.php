@@ -54,15 +54,16 @@ class TagsController extends \BaseController {
 
 	/**
 	 * Display the specified resource.
-	 * GET /tags/{id}
+	 * GET /tags/{slug}
 	 *
-	 * @param  int  $id
+	 * @param  int  $slug
 	 * @return Response
 	 */
-	public function show($id)
+	public function show($slug)
 	{
 		$tags = $this->tag->all();
-		$tag = $this->tag->find($id);
+		$tag = $this->tag->where('slug', '=', $slug)->first();
+
 		$posts = $tag->posts()->paginate(10);
 
 		return View::make('tags.show', compact('tags', 'tag', 'posts'));

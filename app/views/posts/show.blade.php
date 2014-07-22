@@ -17,26 +17,26 @@
             &nbsp;
             <span class="glyphicon glyphicon-tags"></span>&nbsp; Tags: 
             @foreach ($post->tags as $tag)
-            <a href="{{ route('tag.show',$tag->id) }}">{{ $tag->name }}</a>
+            <a href="{{ route('tag.show',$tag->slug) }}">{{ $tag->name }}</a>
             @endforeach</p>
         <hr>
         <p>{{ $post->body }}</p>
 
-        <h3>Comments <small>{{ $post->comments->count() }}</small></h3>
-        @foreach ($post->comments as $comment)
-        	<div class="well">
-        		{{ $comment->body }}
-	        	<hr />
-	        	By {{ $comment->name }} on {{date("F nS\, Y \a\\t g:i a",strtotime($comment->created_at))}}
-        	</div>
-        @endforeach
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'matthewmitchener'; // required: replace example with your forum shortname
 
-        <div class="well">
-        	<h3>Add comment:</h3>
-        	Name <input type="text">
-        	Body <input type="text">
-        	Submit <input type="submit">
-        </div>
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            
 
 	</div>
 

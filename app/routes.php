@@ -27,6 +27,8 @@ Route::resource('tag', 'TagsController',
 Route::resource('author', 'AuthorsController',
 	array('only' => array('index', 'show')));
 
+Route::get('/feed', array('as' => 'feed', 'uses' => 'RssController@index'));
+
 Route::get('/test', function(){
 	$tag = Tag::find(1);
 	foreach ($tag->posts as $post) {

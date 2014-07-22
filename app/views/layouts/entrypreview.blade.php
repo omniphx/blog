@@ -16,14 +16,21 @@
             &nbsp;
             <span class="glyphicon glyphicon-tags"></span>&nbsp; Tags: 
             @foreach ($post->tags as $tag)
-            <a href="{{ route('tag.show',$tag->id) }}">{{ $tag->name }}</a>
+            <a href="{{ route('tag.show',$tag->slug) }}">
+                {{ $tag->name }}
+            </a>
             @endforeach</p>
         <hr>
         <img src="http://placehold.it/900x300" class="img-responsive">
         <hr>
         <p>{{ str_finish(Str::limit($post->body, 200),'..') }}</p>
-        <a class="btn btn-primary" href="{{ route('post.show', $post->id) }}">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
-        <a class="btn btn-primary" href="#">{{$post->comments()->count()}} {{ \Illuminate\Support\Pluralizer::plural('Comment', $post->comments()->count()) }} <span class="glyphicon glyphicon-comment"></span></a>
+        <a class="btn btn-primary" href="{{ route('post.show', $post->id) }}">
+            Read More <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+        <a class="btn btn-primary" href="{{ route('post.show', $post->id) }}#disqus_thread">
+            {{$post->comments()->count()}} {{ \Illuminate\Support\Pluralizer::plural('Comment', $post->comments()->count()) }}
+            <span class="glyphicon glyphicon-comment"></span>
+        </a>
 
         <hr>
 
