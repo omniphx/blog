@@ -2,8 +2,7 @@
 
 use Illuminate\Support\ServiceProvider;
 
-class NewsletterListServiceProvider extends ServiceProvider {
-
+class NotificationsServiceProvider extends ServiceProvider {
 
 	public function register()
 	{

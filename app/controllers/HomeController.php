@@ -1,19 +1,8 @@
 <?php
 
-class HomeController extends BaseController {
+use Blog\Newsletters\NewsletterList;
 
-	/*
-	|--------------------------------------------------------------------------
-	| Default Home Controller
-	|--------------------------------------------------------------------------
-	|
-	| You may wish to use controllers instead of, or in addition to, Closure
-	| based routes. That's great! Here is an example controller method to
-	| get you started. To route to this controller, just add the route:
-	|
-	|	Route::get('/', 'HomeController@showWelcome');
-	|
-	*/
+class HomeController extends BaseController {
 
 	/**
 	 * Post Model
@@ -34,14 +23,20 @@ class HomeController extends BaseController {
 	protected $tag;
 
 	/**
+	 * @var Newsletter
+	 */
+	protected $newsletterlist;
+
+	/**
 	 * Inject the models.
 	 * @param Post    $post     
 	 * @param Comment $comment 
 	 */
-	public function __construct(Post $post, Comment $comment, Tag $tag) {
-		$this->post = $post;
-		$this->comment = $comment;
-		$this->tag = $tag;
+	public function __construct(Post $post, Comment $comment, Tag $tag, NewsletterList $newsletterlist) {
+		$this->post           = $post;
+		$this->comment        = $comment;
+		$this->tag            = $tag;
+		$this->newsletterlist = $newsletterlist;
 	}
 
 	public function index()
@@ -50,6 +45,34 @@ class HomeController extends BaseController {
 		$tags = $this->tag->all();
 
 		return View::make('home.index', compact('posts','tags'));
+	}
+
+	public function about()
+	{
+		$tags = $this->tag->all();
+
+		return View::make('home.about', compact('tags'));
+	}
+
+	public function services()
+	{
+		$tags = $this->tag->all();
+
+		return View::make('home.services', compact('tags'));
+	}
+
+	public function contact()
+	{
+		$tags = $this->tag->all();
+
+		return View::make('home.contact', compact('tags'));
+	}
+
+	public function subscribe()
+	{
+		$email = Input::get('email');
+
+		return Event::fire('newsletter.subscribe', [$email]);
 	}
 
 }

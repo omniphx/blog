@@ -1,14 +1,21 @@
 <div class="col-lg-4">
 
     <div class="well">
-        <div class="input-group">
-            <input type="text" class="form-control">
-            <span class="input-group-btn">
-                <button class="btn btn-default" type="button">
-                    <span>Subscribe</span>
-                </button>
-            </span>
-        </div>
+        {{ Form::open(array(
+            'route'  =>'subscribe',
+            'role'   =>'form',
+            'class'  =>'form-inline',
+            'method' =>'POST')) }}
+          <div class="form-group">
+            <label class="sr-only" for="inputEmail">Email address</label>
+            {{ Form::text('email', null, [
+                'placeholder' => 'Subscribe...',
+                'class'       =>'form-control input-lg']) }}
+            <button type="submit" class="btn btn-default btn-lg">
+                <span class="glyphicon glyphicon-envelope"></span>
+            </button>
+          </div>
+        {{Form::close() }}
     </div>
     <!-- /well -->
 

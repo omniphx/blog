@@ -1,6 +1,7 @@
 <?php namespace Blog\Newsletters\Mailchimp;
 
 use Blog\Newsletters\NewsletterList as NewsletterListInterface;
+use Mailchimp;
 
 class NewsletterList implements NewsletterListInterface {
 
@@ -18,7 +19,7 @@ class NewsletterList implements NewsletterListInterface {
 	 */
 	function __construct(Mailchimp $mailchimp)
 	{
-		$this->mailchimp;
+		$this->mailchimp = $mailchimp;
 	}
 
 	/**
@@ -30,6 +31,7 @@ class NewsletterList implements NewsletterListInterface {
 	public function subscribeTo($listName, $email)
 	{
 		$this->mailchimp->lists->subscribe(
+			// Config('apikeys')['MAILCHIMP_APIKEY'],
 			$this->lists[$listName],
 			['email' => $email],
 			null, //merge_var
@@ -51,7 +53,7 @@ class NewsletterList implements NewsletterListInterface {
 			$this->lists[$listName],
 			['email' => $email],
 			false, //delete member permanently
-			false //send goodbye email?
+			false, //send goodbye email?
 			false //send an unsubscribe email
 		);
 	}

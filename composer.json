@@ -6,7 +6,8 @@
 	"require": {
 		"laravel/framework": "4.2.*",
 		"nesbot/Carbon": "*",
-		"mailchimp/mailchimp": "2.0.*"
+		"mailchimp/mailchimp": "2.0.5",
+		"doctrine/dbal": "~2.3"
 	},
 	"require-dev": {
 		"way/generators": "2.*",

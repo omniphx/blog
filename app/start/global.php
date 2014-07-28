@@ -69,6 +69,18 @@ App::down(function()
 
 /*
 |--------------------------------------------------------------------------
+| Register subscriptions
+|--------------------------------------------------------------------------
+|
+| This will register events.
+|
+*/
+
+Event::subscribe('Blog\Handlers\PostEventHandler');
+Event::subscribe('Blog\Handlers\NewsletterEventHandler');
+
+/*
+|--------------------------------------------------------------------------
 | Require The Filters File
 |--------------------------------------------------------------------------
 |

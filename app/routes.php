@@ -29,16 +29,20 @@ Route::resource('author', 'AuthorsController',
 
 Route::get('/feed', array('as' => 'feed', 'uses' => 'RssController@index'));
 
-Route::get('/test', function(){
-	$tag = Tag::find(1);
-	foreach ($tag->posts as $post) {
-		echo $post->title;
-	}
+Route::post('/subscribe', array('as' => 'subscribe', 'uses' => 'HomeController@subscribe'));
+
+Route::get('/createPost', function()
+{
+	return Post::create([
+		'title'=>'Cloud computing',
+		'body'=>'Cloud computing is the future.',
+		'author_id'=>1,
+		'published'=>0]);
 });
 
-Route::get('/test2', function(){
+Route::get('/test', function(){
+
 	$post = Post::find(1);
-	foreach ($post->tags as $tag) {
-		echo $tag->name;
-	}
+
+	return StringHelper::post_tag_uri($post);
 });

@@ -25,9 +25,10 @@ class RssController extends \BaseController {
 	 */
 	public function index()
 	{
-		$data['posts'] = $this->post->orderBy('created_at', 'DESC')->get();
+		$data['posts'] = $this->post->published()->orderBy('created_at', 'DESC')->get();
 
-		return Response::view('rss.index', $data)->header('Content-Type', 'application/atom+xml; charset=UTF-8');
+		return Response::view('rss.index', $data)
+			->header('Content-Type', 'application/atom+xml; charset=UTF-8');
 
 	}
 

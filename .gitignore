@@ -12,3 +12,4 @@ Thumbs.db
 /app/config/local
 /public/assets/styles
 /public/assets/scripts
+/app/database/production.sqlite

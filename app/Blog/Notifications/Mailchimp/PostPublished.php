@@ -20,12 +20,12 @@ class PostPublished implements PostPublishedInterface {
 	 */
 	function __construct(Mailchimp $mailchimp)
 	{
-		$this->mailchimp;
+		$this->mailchimp = $mailchimp;
 	}
 
 	/**
-	 * @param $title 
-	 * @param $body  
+	 * @param $title
+	 * @param $body
 	 * @return mixed
 	 */
 	public function notify($title, $body)
@@ -34,13 +34,11 @@ class PostPublished implements PostPublishedInterface {
 			'list_id'    => self::POST_SUBSCRIBERS_ID,
 			'subject'    => 'New post: ' . $title,
 			'from_name'  => 'Matt Mitchener',
-			'from_email' => 'mattjmitchener@gamil.com',
-			'to_name'    => 'Blog subscriber'
+			'from_email' => 'mattjmitchener@gmail.com'
 		];
 
 		$content = [
-			'html' => $body,
-			'text' => string_tags($body)
+			'html' => $body
 		];
 		
 		$campaign = $this->mailchimp->campaigns->create('regular', $options, $content);

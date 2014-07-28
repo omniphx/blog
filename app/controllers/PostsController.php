@@ -37,7 +37,7 @@ class PostsController extends \BaseController {
 
 		$posts = $query
 			? $this->post->search($query)->orderBy('created_at', 'DESC')->paginate(10)
-			: $this->post->orderBy('created_at', 'DESC')->paginate(10);
+			: $this->post->published()->orderBy('created_at', 'DESC')->paginate(10);
 
 		$tags = $this->tag->all();
 

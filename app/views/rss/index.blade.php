@@ -9,15 +9,14 @@
 	<author>
 		<name>Matt Mitchener</name>
 	</author>
-	<id>tag:mattmitchener.com,{{ data('Y') }}:/feed</id>
+	<id>tag:mattmitchener.com,{{ date('Y') }}:/feed</id>
 
 	@foreach ($posts as $post)	
 	<entry>
 		<title>{{$post->title}}</title>
 		<link href="{{ URL::route('post.show', $post->id) }}" />
-		<id>{{ Blog\Helper::post_tag_uri($post) }}</id>
-		<updated>Carbon\Carbon::toATOMString("{{ $post->updated_at }}")</updated>
-		<summary>{{ $post->body }}</summary>
+		<id>{{ StringHelper::post_tag_uri($post) }}</id>
+		<summary>{{ $post->excerpt }}</summary>
 	</entry>
 	@endforeach
 
