@@ -77,11 +77,11 @@ class PostsController extends \BaseController {
 	{
 		$post = $this->post->find($id);
 		$tags = $this->tag->all();
-		$comments = array_values(array_sort($post->comments, function($value){
-			return $value['created_at'];
-		}));
+		// $comments = array_values(array_sort($post->comments, function($value){
+		// 	return $value['created_at'];
+		// }));
 
-		return View::make('posts.show', compact('post', 'tags', 'comments'));
+		return View::make('posts.show', compact('post', 'tags'));
 	}
 
 	/**

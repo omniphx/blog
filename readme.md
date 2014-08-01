@@ -13,3 +13,7 @@ Building a blog from scratch. Experimenting with SQLite, Gulp, and Bootstrap. Ma
 6. `gulp css`
 7. `gulp uglify`
 8. `gulp` (to watch)
+
+### Todo
+1. Add slugs to all resources
+2. Add `Types` as a resource
