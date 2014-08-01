@@ -24,4 +24,16 @@ class StringHelper {
 		return implode('', $output);
 	}
 
+	/**
+	 * Make string uppercase
+	 * @param  String $string
+	 * @return String
+	 */
+	public function upperCase($string)
+	{
+		$upperCase = strtoupper($string);
+
+		return $upperCase;
+	}
+
 }

@@ -9,16 +9,35 @@
 
 <div class="row">
 	<div class="col-lg-8">
-		<img src="http://placehold.it/900x300" class="img-responsive">
-		<h1>{{$post->title}}</h1>
-        <p class="lead">by <a href="index.php">{{$post->author->name}}</a>
-        <p>
-            <span class="glyphicon glyphicon-time"></span> Posted on {{date("F nS\, Y \a\\t g:i a",strtotime($post->created_at))}}
-            &nbsp;
-            <span class="glyphicon glyphicon-tags"></span>&nbsp; Tags: 
-            @foreach ($post->tags as $tag)
-            <a href="{{ route('tag.show',$tag->slug) }}">{{ $tag->name }}</a>
-            @endforeach</p>
+
+        <div class="row">
+            <div class="col-sm-2">
+                <div class="icon icon-{{$post->type}}">
+                    <h3>{{StringHelper::upperCase($post->type)}}</h3>
+                    @if ($post->type == 'code')
+                        <i class="fa fa-code fa-5x"></i>
+                    @elseif ($post->type == 'sports')
+                        <i class="fa fa-dribbble fa-5x"></i>
+                    @elseif ($post->type == 'life')
+                        <i class="fa fa-quote-right fa-5x"></i>
+                    @elseif ($post->type == 'sfdc')
+                        <i class="fa fa-cloud fa-5x"></i>
+                    @endif
+                </div>
+            </div>
+            <div class="col-sm-10">
+                <h1>{{$post->title}}</h1>
+                <p class="lead">by <a href="index.php">{{$post->author->name}}</a>
+                <p>
+                    <span class="glyphicon glyphicon-time"></span> Posted on {{date("F nS\, Y \a\\t g:i a",strtotime($post->created_at))}}
+                    &nbsp;
+                    <span class="glyphicon glyphicon-tags"></span>&nbsp; Tags: 
+                    @foreach ($post->tags as $tag)
+                    <a href="{{ route('tag.show',$tag->slug) }}">{{ $tag->name }}</a>
+                    @endforeach
+                </p>
+            </div>
+        </div>
         <hr>
         <p>{{ $post->body }}</p>
 

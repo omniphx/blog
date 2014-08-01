@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('title')
-<title>Home</title>
+<title>Contact</title>
 @stop
 
 {{-- Content --}}
@@ -12,6 +12,7 @@
 
             <h1>Contact me</h1>
             <p>Contact me at...</p>
+            <i class="fa fa-bullhorn"></i>
 
 		</div>
 

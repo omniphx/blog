@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('title')
-<title>Home</title>
+<title>Services</title>
 @stop
 
 {{-- Content --}}

@@ -9,6 +9,7 @@ Thumbs.db
 /bower_components
 /node_modules
 *.mm
+mm.log
 /app/config/local
 /public/assets/styles
 /public/assets/scripts

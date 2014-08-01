@@ -18,6 +18,7 @@ class CreatePostsTable extends Migration {
 			$table->string('title');
 			$table->text('excerpt');
 			$table->text('body');
+			$table->string('type');
 			$table->boolean('published');
 			$table->integer('author_id')->unsigned()->index();
 			$table->foreign('author_id')->references('id')->on('authors')->onDelete('cascade');

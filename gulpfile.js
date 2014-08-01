@@ -1,10 +1,10 @@
-var gulp = require('gulp'),
+var	gulp      = require('gulp'),
 	minifyCSS = require('gulp-minify-css'),
 	less      = require('gulp-less'),
 	path      = require('path'),
-	concat = require('gulp-concat'),
-	uglify = require('gulp-uglify'),
-	notify = require('gulp-notify');
+	concat    = require('gulp-concat'),
+	uglify    = require('gulp-uglify'),
+	notify    = require('gulp-notify');
 
 gulp.task('concat', function() {
   gulp.src([
