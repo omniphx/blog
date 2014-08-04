@@ -12,22 +12,22 @@
 
         <div class="row">
             <div class="col-sm-2">
-                <div class="icon icon-{{$post->type}}">
-                    <h3>{{StringHelper::upperCase($post->type)}}</h3>
-                    @if ($post->type == 'code')
+                <div class="icon icon-{{$post->type->name}}">
+                    <h3>{{StringHelper::upperCase($post->type->name)}}</h3>
+                    @if ($post->type->name == 'code')
                         <i class="fa fa-code fa-5x"></i>
-                    @elseif ($post->type == 'sports')
+                    @elseif ($post->type->name == 'sports')
                         <i class="fa fa-dribbble fa-5x"></i>
-                    @elseif ($post->type == 'life')
+                    @elseif ($post->type->name == 'life')
                         <i class="fa fa-quote-right fa-5x"></i>
-                    @elseif ($post->type == 'sfdc')
+                    @elseif ($post->type->name == 'sfdc')
                         <i class="fa fa-cloud fa-5x"></i>
                     @endif
                 </div>
             </div>
             <div class="col-sm-10">
                 <h1>{{$post->title}}</h1>
-                <p class="lead">by <a href="index.php">{{$post->author->name}}</a>
+                <p class="lead">by <a href="{{ route('author.show', $post->author->slug) }}">{{$post->author->name}}</a>
                 <p>
                     <span class="glyphicon glyphicon-time"></span> Posted on {{date("F nS\, Y \a\\t g:i a",strtotime($post->created_at))}}
                     &nbsp;

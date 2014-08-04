@@ -21,6 +21,9 @@ Route::get('/contact', array('as' => 'contact', 'uses' => 'HomeController@contac
 Route::resource('post', 'PostsController',
 	array('only' => array('index', 'show')));
 
+Route::resource('type', 'TypesController',
+	array('only' => array('index', 'show')));
+
 Route::resource('tag', 'TagsController',
 	array('only' => array('index', 'show')));
 
@@ -44,5 +47,5 @@ Route::get('/test', function(){
 
 	$post = Post::find(1);
 
-	return StringHelper::post_tag_uri($post);
+	return $post->getSlug();
 });

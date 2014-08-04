@@ -1,7 +1,17 @@
 <?php
 
-class Post extends \Eloquent
-{
+use Cviebrock\EloquentSluggable\SluggableInterface;
+use Cviebrock\EloquentSluggable\SluggableTrait;
+
+class Post extends \Eloquent implements SluggableInterface {
+
+	use SluggableTrait;
+
+	protected $sluggable = array(
+        'build_from' => 'title',
+        'save_to'    => 'slug',
+    );
+
 	protected $guarded = ['id'];
 
 	public static function boot()
@@ -18,10 +28,10 @@ class Post extends \Eloquent
 		// });
 	}
 
-	// public function comments()
-	// {
-	// 	return $this->hasMany('Comment');
-	// }
+	public function type()
+	{
+		return $this->belongsTo('Type');
+	}
 
 	public function tags()
 	{
@@ -41,6 +51,11 @@ class Post extends \Eloquent
 	public function scopePublished($query)
 	{
 		return $query->where('published','=','1');
+	}
+
+	public function FunctionName($value='')
+	{
+		# code...
 	}
 
 	public function notify()

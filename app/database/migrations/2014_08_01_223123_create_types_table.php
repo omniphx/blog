@@ -1,9 +1,9 @@
 <?php
 
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
 
-class AddSluggableColumns extends Migration {
+class CreateTypesTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,11 +12,15 @@ class AddSluggableColumns extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('tags', function(Blueprint $table)
+		Schema::create('types', function(Blueprint $table)
 		{
+			$table->increments('id');
 			$table->string('slug')->nullable();
+			$table->string('name')->unique();
+			$table->timestamps();
 		});
 	}
+
 
 	/**
 	 * Reverse the migrations.
@@ -25,10 +29,7 @@ class AddSluggableColumns extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('tags', function(Blueprint $table)
-		{
-			$table->dropColumn('slug');
-		});
+		Schema::drop('types');
 	}
 
 }

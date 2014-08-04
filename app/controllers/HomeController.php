@@ -11,12 +11,6 @@ class HomeController extends BaseController {
 	protected $post;
 
 	/**
-	 * Comment Model
-	 * @var Comment
-	 */
-	protected $comment;
-
-	/**
 	 * Tag Model
 	 * @var Tag
 	 */
@@ -32,9 +26,8 @@ class HomeController extends BaseController {
 	 * @param Post    $post     
 	 * @param Comment $comment 
 	 */
-	public function __construct(Post $post, Comment $comment, Tag $tag, NewsletterList $newsletterlist) {
+	public function __construct(Post $post, Tag $tag, NewsletterList $newsletterlist) {
 		$this->post           = $post;
-		$this->comment        = $comment;
 		$this->tag            = $tag;
 		$this->newsletterlist = $newsletterlist;
 	}

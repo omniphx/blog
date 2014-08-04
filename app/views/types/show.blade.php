@@ -1,0 +1,1 @@
+/Users/mjmitchener/Sites/projects/Blog/Laravel-Blog/app/views/types/show.blade.php

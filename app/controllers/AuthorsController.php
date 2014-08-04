@@ -68,9 +68,9 @@ class AuthorsController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show($slug)
 	{
-		$author = $this->author->find($id);
+		$author = $this->author->where('slug', '=', $slug)->first();
 		$tags = $this->tag->all();
 		$posts = $author->posts()->paginate(10);
 

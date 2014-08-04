@@ -17,3 +17,4 @@ Building a blog from scratch. Experimenting with SQLite, Gulp, and Bootstrap. Ma
 ### Todo
 1. Add slugs to all resources
 2. Add `Types` as a resource
+3. Add admin feature to view unpublished articles and edit exisiting ones
