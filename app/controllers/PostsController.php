@@ -75,7 +75,7 @@ class PostsController extends \BaseController {
 	 */
 	public function show($slug)
 	{
-		$post = $this->post->where('slug', '=', $slug)->first();
+		$post = $this->post->findSlug($slug);
 		$tags = $this->tag->all();
 
 		return View::make('posts.show', compact('post', 'tags'));

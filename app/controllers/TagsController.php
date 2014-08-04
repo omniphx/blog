@@ -62,7 +62,7 @@ class TagsController extends \BaseController {
 	public function show($slug)
 	{
 		$tags = $this->tag->all();
-		$tag = $this->tag->where('slug', '=', $slug)->first();
+		$tag = $this->tag->findSlug($slug);
 
 		$posts = $tag->posts()->paginate(10);
 

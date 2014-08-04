@@ -70,7 +70,7 @@ class AuthorsController extends \BaseController {
 	 */
 	public function show($slug)
 	{
-		$author = $this->author->where('slug', '=', $slug)->first();
+		$author = $this->author->findSlug($slug);
 		$tags = $this->tag->all();
 		$posts = $author->posts()->paginate(10);
 

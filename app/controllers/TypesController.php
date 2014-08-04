@@ -61,7 +61,7 @@ class TypesController extends \BaseController {
 	 */
 	public function show($slug)
 	{
-		$type = $this->type->where('slug', '=', $slug)->first();
+		$type = $this->type->findSlug($slug);
 
 		$posts = $type->posts()->paginate(10);
 		$tags = $this->tag->all();

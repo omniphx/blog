@@ -2,10 +2,13 @@
 
 use Cviebrock\EloquentSluggable\SluggableInterface;
 use Cviebrock\EloquentSluggable\SluggableTrait;
+use Blog\Traits\EloquentTrait;
 
 class Post extends \Eloquent implements SluggableInterface {
 
 	use SluggableTrait;
+	use EloquentTrait;
+
 
 	protected $sluggable = array(
         'build_from' => 'title',
@@ -51,11 +54,6 @@ class Post extends \Eloquent implements SluggableInterface {
 	public function scopePublished($query)
 	{
 		return $query->where('published','=','1');
-	}
-
-	public function FunctionName($value='')
-	{
-		# code...
 	}
 
 	public function notify()
