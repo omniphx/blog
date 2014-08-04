@@ -16,9 +16,11 @@ Building a blog from scratch. Experimenting with SQLite, Gulp, and Bootstrap. Ma
 
 ### Todo
 
-1a. <s>Add slugs to all resources</s>
-1b. Create a scope function
-2. <s>Add `Types` as a resource</s>
-3. Add admin feature to view unpublished articles and edit exisiting ones
-4. Add social media icons/functionality
-5. Improve SEO
+1. <s>Add slugs to all resources</s>
+2. <s>Create a scope function</s>
+3. <s>Add `Types` as a resource</s>
+4. Create admin features
+5. Add admin feature to view unpublished articles and edit exisiting ones
+6. Add social media icons/functionality
+7. Improve SEO
+8. Add "Related posts" well to post.show

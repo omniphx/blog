@@ -102,7 +102,7 @@ class PostsController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+		
 	}
 
 	/**

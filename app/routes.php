@@ -45,7 +45,18 @@ Route::get('/createPost', function()
 
 Route::get('/test', function(){
 
-	$post = Post::find(1);
+	return Link_to_route('user', 'Test');
+});
 
-	return $post->getSlug();
+Route::group(array('prefix' => 'admin'), function()
+{
+    Route::get('/unpublished', array(
+    	'as' => 'unpublished',
+    	'uses' => 'AdminController@unpublished'));
+});
+
+Route::group(array('before' => 'auth.basic'), function()
+{
+	Route::resource('post', 'PostsController',
+	array('only' => array('update', 'edit')));
 });
