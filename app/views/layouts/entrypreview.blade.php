@@ -23,6 +23,7 @@
 
                 <p class="lead">by <a class="link-{{$post->type->name}}" href="{{ route('author.show', $post->author->slug) }}">{{ $post->author['name'] }}</a>
                 </p>
+                @include('layouts.shareicons')
                 <hr>
                 <p>
                     <span class="glyphicon glyphicon-time"></span> Posted on {{date("F nS\, Y \a\\t g:i a",strtotime($post->created_at))}}

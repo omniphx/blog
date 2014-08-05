@@ -9,7 +9,7 @@
 
 <div class="row">
 	<div class="col-lg-12">
-		<table class="table table-hover">
+		<table class="table">
 			<tr>
 				<th>Id</th>
 				<th>Title</th>
@@ -22,26 +22,21 @@
 			</tr>
 			@foreach ($posts as $post)
 			<tr>
+				{{ Form::model($post, [
+						'method' => 'PATCH',
+						'route'  => ['post.update', $post->id],
+						'class'  => 'form',
+						'role'   => 'form']) }}
 				<td>{{ $post->id }}</td>
-				<td>{{ $post->title }}</td>
-				<td>{{ $post->excerpt }}</td>
-				<td>{{ $post->body }}</td>
+				<td>{{ Form::text('title') }}</td>
+				<td>{{ Form::textarea('excerpt') }}</td>
+				<td>{{ Form::textarea('body') }}</td>
 				<td>{{ $post->created_at }}</td>
 				<td>{{ $post->updated_at }}</td>
-				<td>
-					{{ Form::model($post, [
-						'route' => [
-							'post.update',
-							$post->published],
-						'class' => 'form',
-						'role' => 'form']) }}
-						{{ Form::checkbox('published',$post->published) }}
+				<td>{{ Form::checkbox('published') }}</td>
+				<td>{{ Form::submit('Update', ['class' => 'btn btn-primary active']) }}
 				</td>
-				<td>
-						{{ Form::submit('Update', [0
-							'class' => 'btn btn-primary active']) }}
-					{{ Form::close() }}
-				</td>
+				{{ Form::close() }}
 			</tr>
 				
 			@endforeach

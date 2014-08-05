@@ -80,3 +80,71 @@ footer {
 // 	background-color: @gray-lighter;
 // 	border-radius: 10px;
 // }
+
+.box-shadow(@shadow: 0 1px 3px rgba(0,0,0,.25)) {
+  -webkit-box-shadow: @shadow; // iOS <4.3 & Android <4.1
+          box-shadow: @shadow;
+}
+
+@Facebook: #3B5998;
+@Flickr: #FE0883;
+@Foursquare: #8FD400;
+@Googleplus: #C63D2D;
+@Instagram: #4E433C;
+@Linkedin: #4875B4;
+@Tumblr: #2B4964;
+// @Twitter: #33CCFF;
+@Vimeo: #86B32D;
+@Youtube: #FF3333;
+@Github: #6CC644;
+
+//Try alternate: http://designpieces.com/2012/12/social-media-colours-hex-and-rgb/
+// @Facebook: #3b5998;
+// @Flickr: #FE0883;
+// @Foursquare: #8FD400;
+// @Googleplus: #dd4b39;
+// @Instagram: #517fa4;
+// @Linkedin: #007bb6;
+// @Tumblr: #2B4964;
+@Twitter: #00aced;
+// @Vimeo: #aad450;
+// @Youtube: #bb0000;
+
+
+
+.twitter-link {
+	color: @Twitter;
+	&:hover,
+	&:focus {
+		color: darken(@Twitter, 10%);
+	}
+}
+
+.github-link {
+	color: @Github;
+	&:hover,
+	&:focus {
+		color: darken(@Github, 10%);
+	}
+}
+
+.linkedin-link {
+	color: @Linkedin;
+	&:hover,
+	&:focus {
+		color: darken(@Linkedin, 10%);
+	}
+}
+
+.googleplus-link {
+	color: @Googleplus;
+	&:hover,
+	&:focus {
+		color: darken(@Googleplus, 10%);
+	}
+}
+
+.about-heading {
+	text-align: center;
+	letter-spacing: 9.5px;
+}

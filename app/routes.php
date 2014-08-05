@@ -57,6 +57,5 @@ Route::group(array('prefix' => 'admin'), function()
 
 Route::group(array('before' => 'auth.basic'), function()
 {
-	Route::resource('post', 'PostsController',
-	array('only' => array('update', 'edit')));
+	Route::resource('post', 'PostsController', array('only' => array('update','edit')));
 });

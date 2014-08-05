@@ -102,6 +102,11 @@ class PostsController extends \BaseController {
 	 */
 	public function update($id)
 	{
+		$post = Post::findOrFail($id);
+		$post->fill(Input::all());
+		$post->save();
+
+		return Redirect::to('/admin/unpublished');
 		
 	}
 

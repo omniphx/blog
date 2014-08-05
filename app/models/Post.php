@@ -15,7 +15,7 @@ class Post extends \Eloquent implements SluggableInterface {
         'save_to'    => 'slug',
     );
 
-	protected $guarded = ['id'];
+	protected $guarded = ['id', 'created_at', 'updated_at'];
 
 	public static function boot()
 	{

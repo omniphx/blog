@@ -15,10 +15,6 @@
         <ul class="nav navbar-nav">
             <li><a href="{{ route('about') }}">About</a>
             </li>
-            <li><a href="{{ route('services') }}">Services</a>
-            </li>
-            <li><a href="{{ route('contact') }}">Contact</a>
-            </li>
         </ul>
         {{ Form::open(array('route'=>'post.index','class'=>'navbar-form navbar-right', 'method'=>'GET')) }}
           <div class="form-group">
