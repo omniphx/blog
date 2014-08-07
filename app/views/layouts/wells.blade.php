@@ -10,7 +10,7 @@
             <label class="sr-only" for="inputEmail">Email address</label>
             {{ Form::text('email', null, [
                 'placeholder' => 'Subscribe...',
-                'class'       =>'form-control input-lg']) }}
+                'class'       =>'form-control input-lg input-subscribe']) }}
             <button type="submit" class="btn btn-default btn-lg">
                 <span class="glyphicon glyphicon-envelope"></span>
             </button>

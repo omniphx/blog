@@ -14,7 +14,7 @@
 	@foreach ($posts as $post)	
 	<entry>
 		<title>{{$post->title}}</title>
-		<link href="{{ URL::route('post.show', $post->id) }}" />
+		<link href="{{ URL::route('post.show', $post->slug) }}" />
 		<id>{{ StringHelper::post_tag_uri($post) }}</id>
 		<summary>{{ $post->excerpt }}</summary>
 	</entry>

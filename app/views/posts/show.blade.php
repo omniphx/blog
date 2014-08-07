@@ -4,6 +4,10 @@
 <title>{{ $post->title }}</title>
 @stop
 
+@section('header')
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-53e2f08627aae71d"></script>
+@stop
+
 {{-- Content --}}
 @section('container')
 

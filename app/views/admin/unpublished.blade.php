@@ -24,17 +24,15 @@
 			<tr>
 				{{ Form::model($post, [
 						'method' => 'PATCH',
-						'route'  => ['post.update', $post->id],
-						'class'  => 'form',
-						'role'   => 'form']) }}
+						'route'  => ['post.update', $post->id]]) }}
 				<td>{{ $post->id }}</td>
 				<td>{{ Form::text('title') }}</td>
-				<td>{{ Form::textarea('excerpt') }}</td>
-				<td>{{ Form::textarea('body') }}</td>
+				<td>{{ Form::text('excerpt') }}</td>
+				<td>{{ Form::text('body') }}</td>
 				<td>{{ $post->created_at }}</td>
 				<td>{{ $post->updated_at }}</td>
 				<td>{{ Form::checkbox('published') }}</td>
-				<td>{{ Form::submit('Update', ['class' => 'btn btn-primary active']) }}
+				<td>{{ Form::submit('Update', ['class' => 'btn btn-primary']) }}
 				</td>
 				{{ Form::close() }}
 			</tr>

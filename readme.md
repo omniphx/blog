@@ -21,6 +21,8 @@ Building a blog from scratch. Experimenting with SQLite, Gulp, and Bootstrap. Ma
 3. <s>Add `Types` as a resource</s>
 4. Create admin features
 5. Add admin feature to view unpublished articles and edit exisiting ones
-6. Add social media icons/functionality
+6. --Add social media icons/functionality--
 7. Improve SEO
 8. Add "Related posts" well to post.show
+9. --Make box outline go away on all anchors--
+10. Fix navbar
