@@ -34,7 +34,7 @@
                     </a>
                     @endforeach</p>
                 <hr>
-                <p>{{ str_finish(Str::limit($post->body, 200),'..') }}</p>
+                <p>{{ str_finish(Str::limit($post->content, 200),'..') }}</p>
                 <a class="btn btn-primary" href="{{ route('post.show', $post->slug) }}">
                     Read More <span class="glyphicon glyphicon-chevron-right"></span>
                 </a>

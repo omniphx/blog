@@ -12,7 +12,8 @@
 	"require-dev": {
 		"way/generators": "2.*",
 		"fzaninotto/faker": "v1.3.0",
-		"cviebrock/eloquent-sluggable": "2.*"
+		"cviebrock/eloquent-sluggable": "2.*",
+		"roumen/feed": "dev-master"
 	},
 	"autoload": {
 		"classmap": [

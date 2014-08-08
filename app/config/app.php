@@ -125,7 +125,8 @@ return array(
 		'Cviebrock\EloquentSluggable\SluggableServiceProvider',
 		'Blog\Newsletters\NewsletterListServiceProvider',
 		'Blog\Notifications\NotificationsServiceProvider',
-		'Blog\Helpers\StringHelperServiceProvider'
+		'Blog\Helpers\StringHelperServiceProvider',
+		'Roumen\Feed\FeedServiceProvider',
 	),
 
 	/*
@@ -192,7 +193,8 @@ return array(
 		'URL'               => 'Illuminate\Support\Facades\URL',
 		'Validator'         => 'Illuminate\Support\Facades\Validator',
 		'View'              => 'Illuminate\Support\Facades\View',
-		'StringHelper'		=> 'Blog\Facades\StringHelper'
+		'StringHelper'      => 'Blog\Facades\StringHelper',
+		'Feed'              => 'Roumen\Feed\Facades\Feed',
 	),
 
 );

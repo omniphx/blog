@@ -112,23 +112,25 @@ footer {
 @Googleplus: #C63D2D;
 @Instagram: #4E433C;
 // @Linkedin: #4875B4;
-@Tumblr: #2B4964;
+// @Tumblr: #2B4964;
 // @Twitter: #33CCFF;
 @Vimeo: #86B32D;
 @Youtube: #FF3333;
 @Github: #6CC644;
 
-//Try alternate: http://designpieces.com/2012/12/social-media-colours-hex-and-rgb/
+//Alternate: http://designpieces.com/2012/12/social-media-colours-hex-and-rgb/
 // @Facebook: #3b5998;
 // @Flickr: #FE0883;
 // @Foursquare: #8FD400;
 // @Googleplus: #dd4b39;
 // @Instagram: #517fa4;
 @Linkedin: #007bb6;
-// @Tumblr: #2B4964;
+@Tumblr: #2B4964;
 @Twitter: #00aced;
 // @Vimeo: #aad450;
 // @Youtube: #bb0000;
+// 
+@Reddit: #ff5700;
 
 
 
@@ -168,6 +170,42 @@ footer {
 	}
 }
 
+.facebook-link {
+	color: @Facebook;
+	&:hover,
+	&:focus {
+		color: darken(@Facebook, 10%);
+		text-decoration: none;
+	}
+}
+
+.tumblr-link {
+	color: @Tumblr;
+	&:hover,
+	&:focus {
+		color: darken(@Tumblr, 10%);
+		text-decoration: none;
+	}
+}
+
+.reddit-link {
+	color: @Reddit;
+	&:hover,
+	&:focus {
+		color: darken(@Reddit, 10%);
+		text-decoration: none;
+	}
+}
+
+.mail-link {
+	color: @gray-light;
+	&:hover,
+	&:focus {
+		color: darken(@gray-light, 10%);
+		text-decoration: none;
+	}
+}
+
 .about-heading {
 	text-align: center;
 	letter-spacing: 9.5px;
@@ -189,4 +227,8 @@ footer {
 .me-panel {
 	background: @grey_wash_wall;
 	background-color: none;
+}
+
+.stLarge {
+	// border: 1px solid black;
 }

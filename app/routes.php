@@ -30,7 +30,7 @@ Route::resource('tag', 'TagsController',
 Route::resource('author', 'AuthorsController',
 	array('only' => array('index', 'show')));
 
-Route::get('/feed', array('as' => 'feed', 'uses' => 'RssController@index'));
+Route::get('/feed', array('as' => 'feed', 'uses' => 'FeedController@index'));
 
 Route::post('/subscribe', array('as' => 'subscribe', 'uses' => 'HomeController@subscribe'));
 

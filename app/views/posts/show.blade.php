@@ -5,7 +5,6 @@
 @stop
 
 @section('header')
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-53e2f08627aae71d"></script>
 @stop
 
 {{-- Content --}}
@@ -31,19 +30,26 @@
             </div>
             <div class="col-sm-10">
                 <h1>{{$post->title}}</h1>
+                @include('layouts.social.shareicons')
+                <br/>
                 <p class="lead">by <a href="{{ route('author.show', $post->author->slug) }}">{{$post->author->name}}</a>
-                <p>
-                    <span class="glyphicon glyphicon-time"></span> Posted on {{date("F nS\, Y \a\\t g:i a",strtotime($post->created_at))}}
-                    &nbsp;
-                    <span class="glyphicon glyphicon-tags"></span>&nbsp; Tags: 
-                    @foreach ($post->tags as $tag)
-                    <a href="{{ route('tag.show',$tag->slug) }}">{{ $tag->name }}</a>
-                    @endforeach
-                </p>
+                <br />
+               
+                <div class="row">
+                    <div class="col-sm-7">
+                        <span class="glyphicon glyphicon-time"></span> Posted on {{date("F nS\, Y \a\\t g:i a",strtotime($post->created_at))}}
+                    </div>
+                    <div class="col-sm-5">
+                        <span class="glyphicon glyphicon-tags"></span>&nbsp; Tags: 
+                        @foreach ($post->tags as $tag)
+                        <a href="{{ route('tag.show',$tag->slug) }}">{{ $tag->name }}</a>
+                        @endforeach
+                    </div>
+                </div>
             </div>
         </div>
         <hr>
-        <p>{{ $post->body }}</p>
+        <p>{{ $post->content }}</p>
 
         <div id="disqus_thread"></div>
         <script type="text/javascript">

@@ -14,8 +14,8 @@ class PostsTableSeeder extends Seeder {
 
 			Post::create([
 				'title'      => $faker->sentence(),
-				'excerpt'    => $faker->paragraph($nbSentences = 3),
-				'body'       => $faker->paragraph($nbSentences = 15),
+				'description'    => $faker->paragraph($nbSentences = 3),
+				'content'       => $faker->paragraph($nbSentences = 15),
 				'author_id'  => $faker->randomNumber(1, 10),
 				'type_id'    => $faker->randomNumber(1,3),
 				'published'  => $faker->randomNumber(0,1),

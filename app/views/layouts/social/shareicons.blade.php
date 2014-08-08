@@ -1,28 +1,48 @@
-<!-- Facebook -->
-<div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/"></div>
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+<a target="_blank" href="https://twitter.com/intent/tweet?text={{ $post->title }}&url={{ route('post.show',$post->slug) }}&via=Omniphx" class="twitter-link">
+	<span class="fa-stack fa-lg">
+		<i class="fa fa-square fa-stack-2x"></i>
+		<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+	</span>
+</a>
 
-<!-- Twitter -->
-<a href="https://twitter.com/share" class="twitter-share-button" data-via="OmniPhx" data-related="OmniPhx" data-count="none">Tweet</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ route('post.show',$post->slug) }}" class="facebook-link">
+	<span class="fa-stack fa-lg">
+		<i class="fa fa-square fa-stack-2x"></i>
+		<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+	</span>
+</a>
 
-<!-- LinkedIn -->
-<script src="//platform.linkedin.com/in.js" type="text/javascript">
-  lang: en_US
-</script>
-<script type="IN/Share" data-counter="right"></script>
+<a target="_blank" href="https://plus.google.com/share?url={{ route('post.show',$post->slug) }}" class="googleplus-link">
+	<span class="fa-stack fa-lg">
+	  <i class="fa fa-square fa-stack-2x"></i>
+	  <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+	</span>
+</a>
 
-<!-- Reddit -->
-<script type="text/javascript" src="http://www.reddit.com/buttonlite.js?i=5"></script>
+<a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url={{ route('post.show',$post->slug) }}&title={{ $post->title }}&summary={{ $post->description }}&source={{ route('post.show',$post->slug) }}" class="linkedin-link">
+	<span class="fa-stack fa-lg">
+		<i class="fa fa-square fa-stack-2x"></i>
+		<i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+	</span>
+</a>
 
-<!-- GooglePlus -->
-<script src="https://apis.google.com/js/plusone.js"></script>
-<g:plus action="share"></g:plus>
+<a target="_blank" href="http://www.reddit.com/submit?url={{ route('post.show',$post->slug) }}&title={{ $post->title }}" class="reddit-link">
+	<span class="fa-stack fa-lg">
+		<i class="fa fa-square fa-stack-2x"></i>
+		<i class="fa fa-reddit fa-stack-1x fa-inverse"></i>
+	</span>
+</a>
 
+<a target="_blank" href="http://www.tumblr.com/share/link?url={{ route('post.show',$post->slug) }}&description={{ $post->description }}" class="tumblr-link">
+	<span class="fa-stack fa-lg">
+		<i class="fa fa-square fa-stack-2x"></i>
+		<i class="fa fa-tumblr fa-stack-1x fa-inverse"></i>
+	</span>
+</a>
+
+<a target="_blank" href="mailto:?subject={{$post->title}}&body={{ $post->description }} Read more: {{ route('post.show',$post->slug) }}" class="mail-link">
+	<span class="fa-stack fa-lg">
+		<i class="fa fa-square fa-stack-2x"></i>
+		<i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
+	</span>
+</a>
