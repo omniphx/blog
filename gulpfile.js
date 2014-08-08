@@ -33,30 +33,18 @@ gulp.task('less', function () {
     .pipe(notify('LESS complete'));
 });
 
-gulp.task('css', function(){
+gulp.task('compress', function(){
 	gulp.src('./public/assets/styles/styles.css')
 		.pipe(minifyCSS())
 		.pipe(gulp.dest('./public/assets/styles/compress'))
 		.pipe(notify('MinifyCSS complete'));
 });
 
-gulp.task('dev', function(){
-	gulp.watch('./app/assets/styles/*.less', ['less']);
-	gulp.watch('./app/assets/scripts/extra.js', ['concat']);
-});
-
-gulp.task('prod', function(){
-	gulp.watch('./app/assets/styles/*.less', ['less']);
-	gulp.watch('./public/assets/styles/styles.css', ['css']);
-	gulp.watch('./app/assets/scripts/extra.js', ['concat']);
-	gulp.watch('./public/assets/scripts/*.js', ['uglify']);
-});
+gulp.task('prod', ['concat','less','uglify','compress']);
 
 gulp.task('watch', function(){
 	gulp.watch('./app/assets/styles/*.less', ['less']);
-	gulp.watch('./public/assets/styles/styles.css', ['css']);
 	gulp.watch('./app/assets/scripts/extra.js', ['concat']);
-	gulp.watch('./public/assets/scripts/*.js', ['uglify']);
 });
 
 gulp.task('default', ['watch']);

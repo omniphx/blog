@@ -19,10 +19,11 @@ Building a blog from scratch. Experimenting with SQLite, Gulp, and Bootstrap. Ma
 1. <s>Add slugs to all resources</s>
 2. <s>Create a scope function</s>
 3. <s>Add `Types` as a resource</s>
-4. Create admin features
+4. Remove AdminController
 5. Add admin feature to view unpublished articles and edit exisiting ones
-6. --Add social media icons/functionality--
-7. Improve SEO
+6. <s>Add social media icons/functionality</s>
+7. Add meta description
 8. Add "Related posts" well to post.show
-9. --Make box outline go away on all anchors--
+9. <s>Make box outline go away on all anchors</s>
 10. Fix navbar
+11. Create a create/edit post panel.

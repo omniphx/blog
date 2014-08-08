@@ -7,13 +7,13 @@
 		"laravel/framework": "4.2.*",
 		"nesbot/Carbon": "*",
 		"mailchimp/mailchimp": "2.0.5",
-		"doctrine/dbal": "~2.3"
+		"doctrine/dbal": "~2.3",
+		"roumen/feed": "dev-master"
 	},
 	"require-dev": {
 		"way/generators": "2.*",
 		"fzaninotto/faker": "v1.3.0",
-		"cviebrock/eloquent-sluggable": "2.*",
-		"roumen/feed": "dev-master"
+		"cviebrock/eloquent-sluggable": "2.*"
 	},
 	"autoload": {
 		"classmap": [
