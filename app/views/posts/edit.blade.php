@@ -7,11 +7,40 @@
 {{-- Content --}}
 @section('container')
 
-<div class="row">
-	<div class="col-lg-8">
+{{ Form::model($post, [
+	'method' => 'PATCH',
+	'role'   => 'form',
+	'route'  => ['post.update', $post->id]]) }}
 
-	</div>
-
-	@include('layouts.wells')
+<div class="form-group">
+	{{ Form::label('Title') }}
+	{{ Form::text('title', null, ['class'=>'form-control']) }}
 </div>
+
+<div class="form-group">
+	{{ Form::label('Description') }}
+	{{ Form::textarea('description', null, ['class'=>'form-control']) }}
+</div>
+
+<div class="form-group">
+	{{ Form::label('Content') }}
+	{{ Form::textarea('content', null, ['class'=>'form-control']) }}
+</div>
+
+<div class="form-group">
+	{{ Form::label('Type') }}
+	{{ Form::text('type_id', null, ['class'=>'form-control']) }}
+</div>
+
+<div class="form-group">
+	{{ Form::label('Published') }}
+	{{ Form::checkbox('published', 'Published') }}
+</div>
+
+<div class="form-group">
+	{{ Form::submit('Update', ['class' => 'btn btn-primary']) }}
+</div>
+
+{{ Form::close() }}
+
 @stop

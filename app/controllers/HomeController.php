@@ -68,4 +68,11 @@ class HomeController extends BaseController {
 		return Event::fire('newsletter.subscribe', [$email]);
 	}
 
+	public function dashboard()
+	{
+		$posts = $this->post->get();
+
+		return View::make('home.dashboard', compact('posts'));
+	}
+
 }

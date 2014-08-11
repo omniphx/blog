@@ -90,7 +90,10 @@ class PostsController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+		$post = $this->post->find($id);
+
+		return View::make('posts.edit', compact('post'));
+
 	}
 
 	/**

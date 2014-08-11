@@ -11,8 +11,6 @@
 |
 */
 
-use Faker\Factory as Faker;
-
 Route::get('/', array('as' => 'home', 'uses' => 'HomeController@index'));
 Route::get('/about', array('as' => 'about', 'uses' => 'HomeController@about'));
 Route::get('/services', array('as' => 'services', 'uses' => 'HomeController@services'));
@@ -48,14 +46,10 @@ Route::get('/test', function(){
 	return Link_to_route('user', 'Test');
 });
 
-Route::group(array('prefix' => 'admin'), function()
-{
-    Route::get('/unpublished', array(
-    	'as' => 'unpublished',
-    	'uses' => 'AdminController@unpublished'));
-});
-
 Route::group(array('before' => 'auth.basic'), function()
 {
 	Route::resource('post', 'PostsController', array('only' => array('update','edit')));
+
+	Route::get('/dashboard', array('as' => 'dashboard', 'uses' => 'HomeController@dashboard'));
+
 });

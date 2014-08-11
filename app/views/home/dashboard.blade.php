@@ -13,12 +13,10 @@
 			<tr>
 				<th>Id</th>
 				<th>Title</th>
-				<th>Excerpt</th>
-				<th>Body</th>
 				<th>Created</th>
 				<th>Updated</th>
 				<th>Published?</th>
-				<th>Update?</th>
+				<th>Edit?</th>
 			</tr>
 			@foreach ($posts as $post)
 			<tr>
@@ -26,13 +24,12 @@
 						'method' => 'PATCH',
 						'route'  => ['post.update', $post->id]]) }}
 				<td>{{ $post->id }}</td>
-				<td>{{ Form::text('title') }}</td>
-				<td>{{ Form::text('excerpt') }}</td>
-				<td>{{ Form::text('body') }}</td>
+				<td>{{ $post->title }}</td>
 				<td>{{ $post->created_at }}</td>
 				<td>{{ $post->updated_at }}</td>
 				<td>{{ Form::checkbox('published') }}</td>
-				<td>{{ Form::submit('Update', ['class' => 'btn btn-primary']) }}
+				<td>{{ Form::submit('Publish', ['class' => 'btn btn-primary']) }}
+				<td></td>
 				</td>
 				{{ Form::close() }}
 			</tr>

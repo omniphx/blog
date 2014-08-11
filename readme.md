@@ -11,7 +11,7 @@ Building a blog from scratch. Experimenting with SQLite, Gulp, and Bootstrap. Ma
 4. `gulp less`
 5. `gulp concat`
 6. `gulp css`
-7. `gulp uglify`
+7. `gulp uglify`	
 8. `gulp` (to watch)
 
 ### Todo
@@ -27,3 +27,4 @@ Building a blog from scratch. Experimenting with SQLite, Gulp, and Bootstrap. Ma
 9. <s>Make box outline go away on all anchors</s>
 10. Fix navbar
 11. Create a create/edit post panel.
+12. Create an event that updates "Published date"

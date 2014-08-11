@@ -3,7 +3,7 @@
 
     <article>
         <div class="row">
-            <div class="col-sm-2">
+            <div class="col-md-2">
                 <div class="icon icon-{{$post->type->name}}">
                 @if ($post->type->name == 'code')
                     <i class="fa fa-code fa-5x"></i>
@@ -16,24 +16,27 @@
                 @endif
                 </div>
             </div>
-            <div class="col-sm-10">
+            <div class="col-md-10">
                 <h2>
                     <a class="link-{{$post->type->name}}" href="{{ route('post.show', $post->slug) }}">{{ $post->title }}</a>
                 </h2>
 
                 <p class="lead">by <a class="link-{{$post->type->name}}" href="{{ route('author.show', $post->author->slug) }}">{{ $post->author['name'] }}</a>
                 </p>
-                <hr>
-                <p>
+
+                <div>
                     <span class="glyphicon glyphicon-time"></span> Posted on {{date("F nS\, Y \a\\t g:i a",strtotime($post->created_at))}}
-                    &nbsp;
+                </div>
+
+                <div>
                     <span class="glyphicon glyphicon-tags"></span>&nbsp; Tags: 
                     @foreach ($post->tags as $tag)
-                    <a class="link-{{$post->type->name}}" href="{{ route('tag.show',$tag->slug) }}">
-                        {{ $tag->name }}
-                    </a>
-                    @endforeach</p>
-                <hr>
+                    <a href="{{ route('tag.show',$tag->slug) }}">{{ $tag->name }}</a>
+                    @endforeach
+                </div>
+
+                <hr />
+
                 <p>{{ str_finish(Str::limit($post->content, 200),'..') }}</p>
                 <a class="btn btn-primary" href="{{ route('post.show', $post->slug) }}">
                     Read More <span class="glyphicon glyphicon-chevron-right"></span>

@@ -14,7 +14,7 @@
 	<div class="col-lg-8">
 
         <div class="row">
-            <div class="col-sm-2">
+            <div class="col-md-2">
                 <div class="icon icon-{{$post->type->name}}">
                     <h3>{{StringHelper::upperCase($post->type->name)}}</h3>
                     @if ($post->type->name == 'code')
@@ -28,7 +28,7 @@
                     @endif
                 </div>
             </div>
-            <div class="col-sm-10">
+            <div class="col-md-10">
                 <h1>{{$post->title}}</h1>
                 @include('layouts.social.shareicons')
                 <br/>
@@ -36,10 +36,10 @@
                 <br />
                
                 <div class="row">
-                    <div class="col-sm-7">
+                    <div class="col-md-7">
                         <span class="glyphicon glyphicon-time"></span> Posted on {{date("F nS\, Y \a\\t g:i a",strtotime($post->created_at))}}
                     </div>
-                    <div class="col-sm-5">
+                    <div class="col-md-5">
                         <span class="glyphicon glyphicon-tags"></span>&nbsp; Tags: 
                         @foreach ($post->tags as $tag)
                         <a href="{{ route('tag.show',$tag->slug) }}">{{ $tag->name }}</a>
