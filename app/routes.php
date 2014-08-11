@@ -53,3 +53,7 @@ Route::group(array('before' => 'auth.basic'), function()
 	Route::get('/dashboard', array('as' => 'dashboard', 'uses' => 'HomeController@dashboard'));
 
 });
+
+Route::get('/api/tags', function(){
+	return Tag::get();
+});

@@ -41,7 +41,7 @@ class PostsController extends \BaseController {
 
 		$tags = $this->tag->all();
 
-		return View::make('posts.index', compact('posts','tags','query'));
+		return View::make('minimal.posts.index', compact('posts','query'));
 	}
 
 	/**
@@ -109,7 +109,7 @@ class PostsController extends \BaseController {
 		$post->fill(Input::all());
 		$post->save();
 
-		return Redirect::to('/admin/unpublished');
+		return Redirect::to("/post/{$post->slug}");
 		
 	}
 
