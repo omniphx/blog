@@ -11,6 +11,7 @@ Thumbs.db
 *.mm
 mm.log
 /app/config/local
+/app/config/production
 /public/assets/styles
 /public/assets/scripts
-/app/database/production.sqlite
+/app/database/*.sqlite

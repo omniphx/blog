@@ -11,7 +11,7 @@ class SubscriptionController extends \BaseController {
 	{
 		$email = Input::get('email');
 
-		Event::fire('newsletter.subscribe', [$email]);
+		Event::fire('subscribe.subscription', [$email]);
 
 		return Redirect::to('/');
 	}

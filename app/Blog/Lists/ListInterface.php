@@ -1,6 +1,6 @@
-<?php namespace Blog\Newsletters;
+<?php namespace Blog\Lists;
 
-interface NewsletterList {
+interface ListInterface {
 
 	/**
 	 * @param  $list

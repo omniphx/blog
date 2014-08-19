@@ -123,7 +123,7 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'Way\Generators\GeneratorsServiceProvider',
 		'Cviebrock\EloquentSluggable\SluggableServiceProvider',
-		'Blog\Newsletters\NewsletterListServiceProvider',
+		'Blog\Lists\SubscriptionListServiceProvider',
 		'Blog\Notifications\NotificationsServiceProvider',
 		'Blog\Helpers\StringHelperServiceProvider',
 		'Roumen\Feed\FeedServiceProvider',

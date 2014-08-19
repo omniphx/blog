@@ -17,19 +17,13 @@ class HomeController extends BaseController {
 	protected $tag;
 
 	/**
-	 * @var Newsletter
-	 */
-	protected $newsletterlist;
-
-	/**
 	 * Inject the models.
 	 * @param Post    $post     
 	 * @param Comment $comment 
 	 */
-	public function __construct(Post $post, Tag $tag, NewsletterList $newsletterlist) {
+	public function __construct(Post $post, Tag $tag) {
 		$this->post           = $post;
 		$this->tag            = $tag;
-		$this->newsletterlist = $newsletterlist;
 	}
 
 	public function index()

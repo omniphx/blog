@@ -1,9 +1,9 @@
-<?php namespace Blog\Newsletters\Mailchimp;
+<?php namespace Blog\Lists\Mailchimp;
 
-use Blog\Newsletters\NewsletterList as NewsletterListInterface;
+use Blog\Lists\ListInterface;
 use Mailchimp;
 
-class NewsletterList implements NewsletterListInterface {
+class SubscriptionList implements ListInterface {
 
 	/**
 	 * @var Mailchimp
@@ -11,7 +11,7 @@ class NewsletterList implements NewsletterListInterface {
 	protected $mailchimp;
 
 	protected $lists = [
-		'PostNotification' => '3122ca9925'
+		'Subscription' => '3122ca9925'
 	];
 
 	/**

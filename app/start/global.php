@@ -77,7 +77,7 @@ App::down(function()
 */
 
 Event::subscribe('Blog\Handlers\PostEventHandler');
-Event::subscribe('Blog\Handlers\NewsletterEventHandler');
+Event::subscribe('Blog\Handlers\SubscribeEventHandler');
 
 /*
 |--------------------------------------------------------------------------
