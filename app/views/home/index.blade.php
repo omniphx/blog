@@ -6,18 +6,11 @@
 
 {{-- Content --}}
 @section('container')
-    
-    <div class="row">
-        <div class="col-lg-8">
 
-            @include('layouts.entrypreview')
+@include('layouts.header')
 
-		</div>
+@include('layouts.preview')
 
-        @include('layouts.wells')
-        
-	</div>
-
-	<hr />
+<hr />
 
 @stop
