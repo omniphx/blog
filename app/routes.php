@@ -12,9 +12,16 @@
 */
 
 Route::get('/', array('as' => 'home', 'uses' => 'HomeController@index'));
-Route::get('/about', array('as' => 'about', 'uses' => 'HomeController@about'));
-Route::get('/services', array('as' => 'services', 'uses' => 'HomeController@services'));
-Route::get('/contact', array('as' => 'contact', 'uses' => 'HomeController@contact'));
+
+// Route::get('/about', array('as' => 'about', 'uses' => 'HomeController@about'));
+
+// Route::get('/services', array('as' => 'services', 'uses' => 'HomeController@services'));
+
+// Route::get('/contact', array('as' => 'contact', 'uses' => 'HomeController@contact'));
+
+Route::get('/subscribe', array('as' => 'subscribe', 'uses' => 'SubscriptionController@subscribe'));
+
+Route::post('/subscribe-fire', array('as' => 'subscribe.fire', 'uses' => 'SubscriptionController@fire'));
 
 Route::resource('post', 'PostsController',
 	array('only' => array('index', 'show')));
@@ -30,21 +37,19 @@ Route::resource('author', 'AuthorsController',
 
 Route::get('/feed', array('as' => 'feed', 'uses' => 'FeedController@index'));
 
-Route::post('/subscribe', array('as' => 'subscribe', 'uses' => 'HomeController@subscribe'));
+// Route::get('/createPost', function()
+// {
+// 	return Post::create([
+// 		'title'=>'Cloud computing',
+// 		'body'=>'Cloud computing is the future.',
+// 		'author_id'=>1,
+// 		'published'=>0]);
+// });
 
-Route::get('/createPost', function()
-{
-	return Post::create([
-		'title'=>'Cloud computing',
-		'body'=>'Cloud computing is the future.',
-		'author_id'=>1,
-		'published'=>0]);
-});
+// Route::get('/test', function(){
 
-Route::get('/test', function(){
-
-	return Link_to_route('user', 'Test');
-});
+// 	return Link_to_route('user', 'Test');
+// });
 
 Route::group(array('before' => 'auth.basic'), function()
 {
@@ -54,6 +59,6 @@ Route::group(array('before' => 'auth.basic'), function()
 
 });
 
-Route::get('/api/tags', function(){
-	return Tag::get();
-});
+// Route::get('/api/tags', function(){
+// 	return Tag::get();
+// });

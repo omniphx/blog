@@ -41,7 +41,7 @@ class PostsController extends \BaseController {
 
 		$tags = $this->tag->all();
 
-		return View::make('minimal.posts.index', compact('posts','query'));
+	return View::make('posts.index', compact('posts','query'));
 	}
 
 	/**

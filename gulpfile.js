@@ -47,4 +47,4 @@ gulp.task('watch', function(){
 	gulp.watch('./app/assets/scripts/extra.js', ['concat']);
 });
 
-gulp.task('default', ['watch']);
+gulp.task('default', ['concat','less','uglify','compress','watch']);

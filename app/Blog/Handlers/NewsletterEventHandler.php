@@ -9,8 +9,6 @@ class NewsletterEventHandler{
 		$newsletterlist = new \Blog\Newsletters\Mailchimp\NewsLetterList($mailchimp);
 
 		$newsletterlist->subscribeTo('PostNotification', $email);
-
-		return 'Success: '.$email;
 	}
 
 	public function subscribe($events)

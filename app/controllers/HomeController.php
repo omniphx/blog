@@ -61,13 +61,6 @@ class HomeController extends BaseController {
 		return View::make('home.contact', compact('tags'));
 	}
 
-	public function subscribe()
-	{
-		$email = Input::get('email');
-
-		return Event::fire('newsletter.subscribe', [$email]);
-	}
-
 	public function dashboard()
 	{
 		$posts = $this->post->get();
