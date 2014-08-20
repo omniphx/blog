@@ -19,12 +19,14 @@ Building a blog from scratch. Experimenting with SQLite, Gulp, and Bootstrap. Ma
 1. <s>Add slugs to all resources</s>
 2. <s>Create a scope function</s>
 3. <s>Add `Types` as a resource</s>
-4. Remove AdminController
-5. Add admin feature to view unpublished articles and edit exisiting ones
+4. <s>Remove AdminController</s>
+5. <s>Add admin feature to view unpublished articles and edit exisiting ones</s>
 6. <s>Add social media icons/functionality</s>
-7. Add meta description
-8. Add "Related posts" well to post.show
+7. <s>Add meta description</s>
+8. <s>Add "Related posts" well to post.show</s>
 9. <s>Make box outline go away on all anchors</s>
-10. Fix navbar
-11. Create a create/edit post panel.
-12. Create an event that updates "Published date"
+10. <s>Fix navbar</s>
+11. <s>Create a create/edit post panel.</s>
+12. <s>Create an event that updates "Published date"</s>
+13. Add types and authors to dashboards.
+14. Add create buttons.

@@ -3,12 +3,12 @@
 use Cviebrock\EloquentSluggable\SluggableInterface;
 use Cviebrock\EloquentSluggable\SluggableTrait;
 use Blog\Traits\EloquentTrait;
+use Carbon\Carbon;
 
 class Post extends \Eloquent implements SluggableInterface {
 
 	use SluggableTrait;
 	use EloquentTrait;
-
 
 	protected $sluggable = array(
         'build_from' => 'title',
@@ -20,15 +20,26 @@ class Post extends \Eloquent implements SluggableInterface {
 	public static function boot()
 	{
 		parent::boot();
+		 
+		static::creating(function($model) {
+			if($model->published == 1)
+			{
+				$model->published_at = Carbon::now();
+			}
+			
+			return true;
 
-		//Commenting out, becuase it may not be necessary. Could notify through RSS feed.
+		});
+		 
+		static::updating(function($model) {
+			if($model->published == 1)
+			{
+				$model->published_at = Carbon::now();
+			}
 
-		// static::saving(function($model)
-		// {
-		// 	if($model->published()){
-		// 		return $model->notify();
-		// 	}
-		// });
+			return true;
+
+		});
 	}
 
 	public function type()
@@ -62,5 +73,11 @@ class Post extends \Eloquent implements SluggableInterface {
 
 		return Event::fire('post.publish', [$post]);
 
+	}
+
+	public function publish($post)
+	{
+		$post->published = 1;
+		return $post->save();
 	}
 }

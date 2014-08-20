@@ -1,5 +1,7 @@
 <?php
 
+use Carbon\Carbon;
+
 class PostsController extends \BaseController {
 
 	/**
@@ -29,8 +31,8 @@ class PostsController extends \BaseController {
 		$query = Request::get('q');
 
 		$posts = $query
-			? $this->post->published()->search($query)->orderBy('created_at', 'DESC')->paginate(10)
-			: $this->post->published()->orderBy('created_at', 'DESC')->paginate(10);
+			? $this->post->published()->search($query)->orderBy('published_at', 'DESC')->paginate(10)
+			: $this->post->published()->orderBy('published_at', 'DESC')->paginate(10);
 
 		return View::make('posts.index', compact('posts','query'));
 
@@ -44,7 +46,10 @@ class PostsController extends \BaseController {
 	 */
 	public function create()
 	{
-		return View::make('posts.create');
+		$types = DB::table('types')->lists('name','id');
+		$authors = DB::table('authors')->lists('name','id');
+
+		return View::make('posts.create', compact('types','authors'));
 	}
 
 	/**
@@ -55,7 +60,13 @@ class PostsController extends \BaseController {
 	 */
 	public function store()
 	{
+		$post = Input::get();
+
+		$post['published'] = 0;
+
+		$this->post->create($post);
 		
+		return Redirect::to('dashboard');
 	}
 
 	/**
@@ -110,15 +121,14 @@ class PostsController extends \BaseController {
 		$post->fill(Input::all());
 		$post->save();
 
-		return Redirect::to("post/{$post->slug}");
+		return Redirect::to("dashboard");
 		
 	}
 
 	public function publish($id)
 	{
 		$post = Post::find($id);
-		$post->published = 1;
-		$post->save();
+		$this->post->publish($post);
 
 		return Redirect::to('dashboard');
 	}

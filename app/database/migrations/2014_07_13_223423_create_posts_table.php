@@ -20,10 +20,11 @@ class CreatePostsTable extends Migration {
 			$table->text('description');
 			$table->text('content');
 			$table->integer('type_id')->unsigned()->index();
-			$table->boolean('published');
+			$table->boolean('published')->default(0);
 			$table->integer('author_id')->unsigned()->index();
 			$table->foreign('author_id')->references('id')->on('authors')->onDelete('cascade');
 			$table->timestamps();
+			$table->timestamp('published_at')->nullable();
 		});
 	}
 

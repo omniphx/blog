@@ -15,10 +15,11 @@
 		<th>Title</th>
 		<th>Created</th>
 		<th>Updated</th>
-		<th>Published?</th>
-		<th>Preview</th>
-		<th>Edit</th>
-		<th>Delete</th>
+		<th>Published</th>
+		<th>Publish?</th>
+		<th>Preview?</th>
+		<th>Edit?</th>
+		<th>Delete?</th>
 	</tr>
 	@foreach ($posts as $post)
 	<tr>
@@ -26,6 +27,7 @@
 		<td>{{ $post->title }}</td>
 		<td>{{ $post->created_at }}</td>
 		<td>{{ $post->updated_at }}</td>
+		<td>{{ $post->published_at }}</td>
 		<td>
 			@if (!$post->published)
 				{{ Form::model($post, [
