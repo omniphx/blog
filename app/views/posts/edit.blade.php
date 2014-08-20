@@ -8,7 +8,7 @@
 @section('container')
 
 <div class="panel panel-default">
-	<div class="panel-heading"><h3>Edit: {{$post->title}}</h1></div>
+	<div class="panel-heading"><h3>{{$post->title}}</h1></div>
 	<div class="panel-body">
 
 		{{ Form::model($post, [
@@ -33,35 +33,19 @@
 
 		<div class="form-group">
 			{{ Form::label('Type') }}
-			{{ Form::text('type_id', null, ['class'=>'form-control']) }}
+			{{ Form::select('type_id', $types, $post->type_id, ['class'=>'form-control']) }}
 		</div>
 
 		<div class="form-group">
 			{{ Form::label('Author') }}
-			{{ Form::text('author_id', null, ['class'=>'form-control']) }}
-		</div>
-
-		<div class="form-group">
-			{{ Form::label('Tags') }}
-			{{ Form::text('tag_id', null, ['class'=>'form-control']) }}
-		</div>
-
-		<div class="center-block">
-		@foreach ($post->tags as $tag)
-		{{ Form::open() }}
-		<button class='btn close'>
-			{{$tag['name']}}
-			<span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-		</button>
-		{{ Form::close() }}
-		@endforeach
+						{{ Form::select('author_id', $authors, $post->author_id, ['class'=>'form-control']) }}
 		</div>
 
 		<br />
 
 		<div class="form-group">
 			{{ Form::submit('Update', ['class' => 'btn btn-primary']) }}
-			<button class="btn btn-primary">Preview</button>
+			<a href="{{route('post.preview',['id'=>$post->id])}}" class="btn btn-default">Preview</a>
 		</div>
 
 		{{ Form::close() }}

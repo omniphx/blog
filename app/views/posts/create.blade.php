@@ -1,7 +1,7 @@
-@extends('layouts.default')
+@extends('layouts.minimal')
 
 @section('title')
-<title></title>
+<title>Create</title>
 @stop
 
 {{-- Content --}}
@@ -12,6 +12,5 @@
 
 	</div>
 
-	@include('layouts.wells')
 </div>
 @stop

@@ -9,20 +9,13 @@ class PostsController extends \BaseController {
 	protected $post;
 
 	/**
-	 * Tag Model
-	 * @var Tag
-	 */
-	protected $tag;
-
-	/**
 	 * Inject the models
 	 * @param Post $post
-	 * @param Tag  $tag
+	 * @param Type $type
 	 */
-	public function __construct(Post $post, Tag $tag)
+	public function __construct(Post $post)
 	{
 		$this->post = $post;
-		$this->tag = $tag;
 	}
 
 	/**
@@ -36,12 +29,11 @@ class PostsController extends \BaseController {
 		$query = Request::get('q');
 
 		$posts = $query
-			? $this->post->search($query)->orderBy('created_at', 'DESC')->paginate(10)
+			? $this->post->published()->search($query)->orderBy('created_at', 'DESC')->paginate(10)
 			: $this->post->published()->orderBy('created_at', 'DESC')->paginate(10);
 
-		$tags = $this->tag->all();
+		return View::make('posts.index', compact('posts','query'));
 
-	return View::make('posts.index', compact('posts','query'));
 	}
 
 	/**
@@ -52,7 +44,7 @@ class PostsController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+		return View::make('posts.create');
 	}
 
 	/**
@@ -63,7 +55,7 @@ class PostsController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+		
 	}
 
 	/**
@@ -75,10 +67,16 @@ class PostsController extends \BaseController {
 	 */
 	public function show($slug)
 	{
-		$post = $this->post->findSlug($slug);
-		$tags = $this->tag->all();
+		$post = $this->post->published()->findSlug($slug);
 
-		return View::make('posts.show', compact('post', 'tags'));
+		return View::make('posts.show', compact('post'));
+	}
+
+	public function preview($id)
+	{
+		$post = $this->post->find($id);
+
+		return View::make('posts.show', compact('post'));
 	}
 
 	/**
@@ -91,8 +89,11 @@ class PostsController extends \BaseController {
 	public function edit($id)
 	{
 		$post = $this->post->find($id);
+		
+		$types = DB::table('types')->lists('name','id');
+		$authors = DB::table('authors')->lists('name','id');
 
-		return View::make('posts.edit', compact('post'));
+		return View::make('posts.edit', compact('post','types','authors'));
 
 	}
 
@@ -109,8 +110,17 @@ class PostsController extends \BaseController {
 		$post->fill(Input::all());
 		$post->save();
 
-		return Redirect::to("/post/{$post->slug}");
+		return Redirect::to("post/{$post->slug}");
 		
+	}
+
+	public function publish($id)
+	{
+		$post = Post::find($id);
+		$post->published = 1;
+		$post->save();
+
+		return Redirect::to('dashboard');
 	}
 
 	/**
@@ -122,7 +132,9 @@ class PostsController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		$this->post->destroy($id);
+
+		return Redirect::to('dashboard');
 	}
 
 }

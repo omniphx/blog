@@ -28,7 +28,7 @@ class HomeController extends BaseController {
 
 	public function index()
 	{
-		$posts = $this->post->orderBy('created_at', 'DESC')->paginate(10);
+		$posts = $this->post->published()->orderBy('created_at', 'DESC')->paginate(10);
 		$tags = $this->tag->all();
 
 		return View::make('home.index', compact('posts','tags'));
@@ -57,7 +57,7 @@ class HomeController extends BaseController {
 
 	public function dashboard()
 	{
-		$posts = $this->post->get();
+		$posts = $this->post->orderBy('created_at', 'DESC')->get();
 
 		return View::make('home.dashboard', compact('posts'));
 	}
