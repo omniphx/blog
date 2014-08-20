@@ -30,3 +30,4 @@ Building a blog from scratch. Experimenting with SQLite, Gulp, and Bootstrap. Ma
 12. <s>Create an event that updates "Published date"</s>
 13. Add types and authors to dashboards.
 14. Add create buttons.
+15. Markdown parsing.

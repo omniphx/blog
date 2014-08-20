@@ -21,22 +21,12 @@ class Post extends \Eloquent implements SluggableInterface {
 	{
 		parent::boot();
 		 
-		static::creating(function($model) {
-			if($model->published == 1)
+		static::saving(function($model) {
+			if($model->published == 1 && $model->published_at == null)
 			{
 				$model->published_at = Carbon::now();
 			}
 			
-			return true;
-
-		});
-		 
-		static::updating(function($model) {
-			if($model->published == 1)
-			{
-				$model->published_at = Carbon::now();
-			}
-
 			return true;
 
 		});

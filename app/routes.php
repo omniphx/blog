@@ -21,6 +21,10 @@ Route::group(array('before' => 'auth.basic'), function()
 		Route::get('/{id}/preview', array('as' => 'post.preview', 'uses' => 'PostsController@preview'));
 	});
 
+	Route::resource('author', 'AuthorsController', array('only' => array('create', 'update', 'store', 'destroy', 'show')));
+
+	Route::resource('type', 'TypesController', array('only' => array('create', 'update', 'store', 'destroy')));
+
 });
 
 /*
@@ -28,7 +32,7 @@ Route::group(array('before' => 'auth.basic'), function()
 | Application Routes
 |--------------------------------------------------------------------------
 |
-| Public facing routes
+| Public routes
 |
 */
 

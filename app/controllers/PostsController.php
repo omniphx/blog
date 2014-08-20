@@ -62,8 +62,6 @@ class PostsController extends \BaseController {
 	{
 		$post = Input::get();
 
-		$post['published'] = 0;
-
 		$this->post->create($post);
 		
 		return Redirect::to('dashboard');

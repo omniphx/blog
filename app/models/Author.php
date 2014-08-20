@@ -14,7 +14,7 @@ class Author extends \Eloquent implements SluggableInterface {
         'save_to'    => 'slug',
     );
 
-	protected $fillable = [];
+	protected $fillable = ['name'];
 
 	public function posts()
 	{

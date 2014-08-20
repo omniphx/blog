@@ -47,7 +47,7 @@ class AuthorsController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+		return View::make('authors.create');
 	}
 
 	/**
@@ -58,7 +58,11 @@ class AuthorsController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+		$author = Input::get();
+
+		$this->author->create($author);
+		
+		return Redirect::to('dashboard');
 	}
 
 	/**
@@ -98,7 +102,11 @@ class AuthorsController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+		$author = Author::findOrFail($id);
+		$author->fill(Input::all());
+		$author->save();
+
+		return Redirect::to('dashboard');
 	}
 
 	/**
@@ -110,7 +118,9 @@ class AuthorsController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		$this->author->destroy($id);
+
+		return Redirect::to('dashboard');
 	}
 
 }

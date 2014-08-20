@@ -3,18 +3,19 @@
 class TypesController extends \BaseController {
 
 	/**
-	 * Tag Model
-	 * @var Tag
+	 * Type Model
+	 * @var Type
 	 */
-	protected $tag;
+	protected $type;
 
 	/**
 	 * Inject the models
-	 * @param Tag    $tag    
+	 * @param Type $type
+	 * @param Tag  $tag    
 	 */
-	public function __construct(Tag $tag)
+	public function __construct(Type $type)
 	{
-		$this->tag = $tag;
+		$this->type = $type;
 	}
 
 	/**
@@ -38,7 +39,7 @@ class TypesController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+		return View::make('types.create');
 	}
 
 	/**
@@ -49,7 +50,11 @@ class TypesController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+		$type = Input::get();
+
+		$this->type->create($type);
+		
+		return Redirect::to('dashboard');
 	}
 
 	/**
@@ -66,7 +71,7 @@ class TypesController extends \BaseController {
 		$posts = $type->posts()->paginate(10);
 		$tags = $this->tag->all();
 
-		return View::make('types.show', compact('type', 'tags', 'posts'));
+		return View::make('types.show', compact('type', 'posts'));
 	}
 
 	/**
@@ -78,7 +83,7 @@ class TypesController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+		//Not needed since all editing is done on the dashboard.
 	}
 
 	/**
@@ -90,7 +95,11 @@ class TypesController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+		$type = Type::findOrFail($id);
+		$type->fill(Input::all());
+		$type->save();
+
+		return Redirect::to('dashboard');
 	}
 
 	/**
@@ -102,7 +111,9 @@ class TypesController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		$this->type->destroy($id);
+
+		return Redirect::to('dashboard');
 	}
 
 }

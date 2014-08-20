@@ -17,13 +17,27 @@ class HomeController extends BaseController {
 	protected $tag;
 
 	/**
+	 * Author Model
+	 * @var Author
+	 */
+	protected $author;
+
+	/**
+	 * Type Model
+	 * @var Type
+	 */
+	protected $type;
+
+	/**
 	 * Inject the models.
 	 * @param Post    $post     
 	 * @param Comment $comment 
 	 */
-	public function __construct(Post $post, Tag $tag) {
-		$this->post           = $post;
-		$this->tag            = $tag;
+	public function __construct(Post $post, Tag $tag, Author $author, Type $type) {
+		$this->post   = $post;
+		$this->tag    = $tag;
+		$this->author = $author;
+		$this->type   = $type;
 	}
 
 	public function index()
@@ -58,8 +72,10 @@ class HomeController extends BaseController {
 	public function dashboard()
 	{
 		$posts = $this->post->orderBy('created_at', 'DESC')->get();
+		$authors = $this->author->orderBy('created_at', 'DESC')->get();
+		$types = $this->type->orderBy('created_at', 'DESC')->get();
 
-		return View::make('home.dashboard', compact('posts'));
+		return View::make('home.dashboard', compact('posts','authors','types'));
 	}
 
 }
