@@ -47,7 +47,6 @@
 		</div>
 
 		<div class="center-block">
-		@foreach ($post->tags as $tag)
 		{{ Form::open() }}
 		<button class='btn close'>
 			{{$tag['name']}}

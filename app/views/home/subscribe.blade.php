@@ -23,7 +23,7 @@
             'placeholder' => 'Email',
             'class'       =>'form-control input-lg input-subscribe']) }}
         <button type="submit" class="btn btn-primary btn-lg btn-block">
-            <i class="fa fa-envelope"></i>
+            <i class="fa fa-envelope-o"></i>
         </button>
       </div>
     {{Form::close() }}

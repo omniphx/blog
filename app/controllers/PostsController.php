@@ -81,6 +81,11 @@ class PostsController extends \BaseController {
 		return View::make('posts.show', compact('post', 'tags'));
 	}
 
+	public function preview($slug)
+	{
+		return 'preview';
+	}
+
 	/**
 	 * Show the form for editing the specified resource.
 	 * GET /posts/{id}/edit
@@ -111,6 +116,11 @@ class PostsController extends \BaseController {
 
 		return Redirect::to("/post/{$post->slug}");
 		
+	}
+
+	public function publish($id)
+	{
+		return 'published';
 	}
 
 	/**
