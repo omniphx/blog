@@ -38,7 +38,7 @@
 
 		<div class="form-group">
 			{{ Form::label('Author') }}
-						{{ Form::select('author_id', $authors, $post->author_id, ['class'=>'form-control']) }}
+			{{ Form::select('author_id', $authors, $post->author_id, ['class'=>'form-control']) }}
 		</div>
 
 		<br />
