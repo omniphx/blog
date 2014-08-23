@@ -20,6 +20,7 @@ class CreatePostsTable extends Migration {
 			$table->text('description');
 			$table->text('content');
 			$table->integer('type_id')->unsigned()->index();
+			$table->foreign('type_id')->references('id')->on('types')->onDelete('cascade');
 			$table->boolean('published')->default(0);
 			$table->integer('author_id')->unsigned()->index();
 			$table->foreign('author_id')->references('id')->on('authors')->onDelete('cascade');

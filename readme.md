@@ -28,6 +28,6 @@ Building a blog from scratch. Experimenting with SQLite, Gulp, and Bootstrap. Ma
 10. <s>Fix navbar</s>
 11. <s>Create a create/edit post panel.</s>
 12. <s>Create an event that updates "Published date"</s>
-13. Add types and authors to dashboards.
-14. Add create buttons.
+13. <s>Add types and authors to dashboards.</s>
+14. <s>Add create buttons.</s>
 15. Markdown parsing.

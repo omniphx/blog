@@ -17,19 +17,35 @@ class Post extends \Eloquent implements SluggableInterface {
 
 	protected $guarded = ['id', 'created_at', 'updated_at'];
 
+	protected $timestamp = array('published_at');
+
 	public static function boot()
 	{
 		parent::boot();
 		 
 		static::saving(function($model) {
-			if($model->published == 1 && $model->published_at == null)
-			{
-				$model->published_at = Carbon::now();
-			}
+
+			$model->sluggify();
+			$model->setPublished_at();
 			
 			return true;
 
 		});
+	}
+
+	public function setPublished_at()
+	{
+		$model = $this->getAttributes();
+
+		if(isset($model['published']))
+		{
+			if($model['published'] == 1 && !isset($model['published_at']))
+			{
+				$this->attributes['published_at'] = Carbon::now();
+			}
+		}
+		
+		return $this;
 	}
 
 	public function type()

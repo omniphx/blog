@@ -2,6 +2,7 @@
 
 @section('title')
 <title>{{ $post->title }}</title>
+<meta name="description=" content="{{ $post->description }}">
 @stop
 
 @section('header')

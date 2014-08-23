@@ -31,8 +31,8 @@ $env = $app->detectEnvironment(array(
 		'matthews-mbp.ef.com',
 		'usb-w0328.ef.com',
 		'Matthews-MacBook-Pro.local',
-		'matthews-mbp-2.example.com',
 		'Matthews-MacBook-Pro-2.local',
+		'matthews-mbp-2.example.com',
         'packer-parallels-iso'),
 
 	'production' => array(

@@ -26,10 +26,10 @@
       @yield('container')
       
       @include('layouts.footer')
-    </div>    
+    </div>
+
+    {{ HTML::script(asset('assets/scripts/built.js')) }}
 
   </body>
-
-  {{ HTML::script(asset('assets/scripts/built.js')) }}
 
 </html>
