@@ -14,14 +14,13 @@ gulp.task('concat', function() {
   	'./app/assets/scripts/*.js'])
     .pipe(concat('built.js'))
     .pipe(gulp.dest('./public/assets/scripts'))
-    .pipe(notify('Concat complete'))
 });
 
 gulp.task('uglify', function(){
   gulp.src('./public/assets/scripts/*.js')
     .pipe(uglify())
-    .pipe(gulp.dest('./public/assets/scripts/compress'))
-    .pipe(notify('Uglify complete'));
+    .pipe(gulp.dest('./public/assets/scripts/'))
+    .pipe(notify('Uglify'));
 });
 
 gulp.task('less', function () {
@@ -30,21 +29,20 @@ gulp.task('less', function () {
       paths: [ path.join(__dirname, 'less', 'includes') ]
     }))
     .pipe(gulp.dest('./public/assets/styles'))
-    .pipe(notify('LESS complete'));
 });
 
 gulp.task('compress', function(){
 	gulp.src('./public/assets/styles/styles.css')
 		.pipe(minifyCSS())
-		.pipe(gulp.dest('./public/assets/styles/compress'))
-		.pipe(notify('MinifyCSS complete'));
+		.pipe(gulp.dest('./public/assets/styles/'))
+		.pipe(notify('Compress'));
 });
-
-gulp.task('prod', ['concat','less','uglify','compress']);
 
 gulp.task('watch', function(){
 	gulp.watch('./app/assets/styles/*.less', ['less']);
+  gulp.watch('./app/assets/styles/*.less', ['compress']);
 	gulp.watch('./app/assets/scripts/extra.js', ['concat']);
+  gulp.watch('./app/assets/scripts/extra.js', ['uglify']);
 });
 
 gulp.task('default', ['concat','less','uglify','compress','watch']);

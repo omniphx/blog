@@ -11,6 +11,4 @@
 
 @include('layouts.preview')
 
-<hr />
-
 @stop

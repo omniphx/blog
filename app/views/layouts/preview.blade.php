@@ -22,13 +22,14 @@
                 </h4>
 
                 <div>
-                    <span class="glyphicon glyphicon-time"></span> Posted on {{date("F nS\, Y \a\\t g:i a",strtotime($post->created_at))}}
+                    <span class="glyphicon glyphicon-time"></span> Posted on {{date("F jS\, Y \a\\t g:i a",strtotime($post->created_at))}}
                 </div>
             </div>
         </div>
 
 
     </article>
+    <hr/>
     <!-- End of blog entry -->
     @endforeach
 

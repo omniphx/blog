@@ -1,8 +1,25 @@
-Options +FollowSymLinks
-RewriteEngine On
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews
+    </IfModule>
 
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^ index.php [L]
+    RewriteEngine On
 
+    # Redirect Trailing Slashes...
+    RewriteRule ^(.*)/$ /$1 [L,R=301]
 
+    # Handle Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+
+    <IfModule mod_expires.c>
+      ExpiresActive on
+      ExpiresByType text/css                "access plus 2 hours"
+      ExpiresByType application/javascript  "access plus 2 hours"
+      ExpiresByType application/x-font-woff "access plus 2 hours"
+      ExpiresByType font/truetype           "access plus 2 hours"
+      ExpiresByType font/opentype           "access plus 2 hours"
+      ExpiresByType image/png               "access plus 2 hours"
+    </IfModule>
+</IfModule>
