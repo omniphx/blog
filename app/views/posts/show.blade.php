@@ -40,7 +40,7 @@
     </div>
 </div>
 <hr>
-<p>{{ $post->content }}</p>
+<p>{{ Markdown::render($post->content) }}</p>
 
 <div id="disqus_thread"></div>
 <script type="text/javascript">

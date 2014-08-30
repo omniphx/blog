@@ -127,6 +127,7 @@ return array(
 		'Blog\Notifications\NotificationsServiceProvider',
 		'Blog\Helpers\StringHelperServiceProvider',
 		'Roumen\Feed\FeedServiceProvider',
+		'GrahamCampbell\Markdown\MarkdownServiceProvider'
 	),
 
 	/*
@@ -195,6 +196,7 @@ return array(
 		'View'              => 'Illuminate\Support\Facades\View',
 		'StringHelper'      => 'Blog\Facades\StringHelper',
 		'Feed'              => 'Roumen\Feed\Facades\Feed',
+		'Markdown' 			=> 'GrahamCampbell\Markdown\Facades\Markdown',
 	),
 
 );
