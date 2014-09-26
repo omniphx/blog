@@ -9,7 +9,11 @@
 |
 */
 
-Route::group(array('before' => 'auth.basic'), function()
+Route::get('login', 'SessionsController@create');
+Route::get('logout', 'SessionsController@destroy');
+Route::resource('session', 'SessionsController', array('only' => 'store'));
+
+Route::group(array('before' => 'auth'), function()
 {
 	Route::get('/dashboard', array('as' => 'dashboard', 'uses' => 'HomeController@dashboard'));
 	

@@ -22,6 +22,12 @@
   </head>
   <body>
 
+    @if(Session::get('flash_message'))
+      <div class="flash">
+        {{ Session::get('flash_message') }}
+      </div>
+    @endif
+
     <div class="container-fluid">
       @yield('container')
       

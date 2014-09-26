@@ -13,6 +13,10 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
 
+    # HTTP Authentication if FastCGI is enabled
+    RewriteCond %{HTTP:Authorization} ^(.+)$
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
     <IfModule mod_expires.c>
       ExpiresActive on
       ExpiresByType text/css                "access plus 2 hours"
