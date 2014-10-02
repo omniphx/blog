@@ -11,12 +11,6 @@ class HomeController extends BaseController {
 	protected $post;
 
 	/**
-	 * Tag Model
-	 * @var Tag
-	 */
-	protected $tag;
-
-	/**
 	 * Author Model
 	 * @var Author
 	 */
@@ -33,9 +27,8 @@ class HomeController extends BaseController {
 	 * @param Post    $post     
 	 * @param Comment $comment 
 	 */
-	public function __construct(Post $post, Tag $tag, Author $author, Type $type) {
+	public function __construct(Post $post, Author $author, Type $type) {
 		$this->post   = $post;
-		$this->tag    = $tag;
 		$this->author = $author;
 		$this->type   = $type;
 	}
@@ -43,29 +36,22 @@ class HomeController extends BaseController {
 	public function index()
 	{
 		$posts = $this->post->published()->orderBy('created_at', 'DESC')->paginate(10);
-		$tags = $this->tag->all();
 
-		return View::make('home.index', compact('posts','tags'));
+		return View::make('home.index', compact('posts'));
 	}
 
 	public function about()
 	{
-		$tags = $this->tag->all();
-
 		return View::make('home.about', compact('tags'));
 	}
 
 	public function services()
 	{
-		$tags = $this->tag->all();
-
 		return View::make('home.services', compact('tags'));
 	}
 
 	public function contact()
 	{
-		$tags = $this->tag->all();
-
 		return View::make('home.contact', compact('tags'));
 	}
 
