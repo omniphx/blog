@@ -3,10 +3,10 @@
 @section('title')
 <title>{{ $post->title }}</title>
 <meta name="description=" content="{{ $post->description }}">
-<meta property="og:site_name" content="Matt Mitchener's Blog"/>
+<meta property="og:site_name" content="Matt Mitchener"/>
 <meta property="og:description" content="{{ $post->description }}"/>
 <meta property="og:locale" content="en_US"/>
-<meta property="og:url" content="http://mattmitchener.com" />
+<meta property="og:url" content="{{ route('post.show', $post->slug) }}" />
 <meta property="og:image" content="http://mattmitchener.com/assets/img/BlogHeader.png" />
 <meta property="og:title" content="{{ $post->title }}"/>
 @stop
