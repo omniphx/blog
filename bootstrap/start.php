@@ -33,7 +33,8 @@ $env = $app->detectEnvironment(array(
 		'Matthews-MacBook-Pro.local',
 		'matthews-mbp-2.example.com',
         'packer-parallels-iso',
-        'Matthews-MacBook-Pro-2.local'),
+        'Matthews-MacBook-Pro-2.local',
+        'Matthews-MacBook-Pro-4.local'),
 
 	'production' => array(
 		'mattmitchener'),
