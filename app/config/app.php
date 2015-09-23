@@ -123,11 +123,11 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'Way\Generators\GeneratorsServiceProvider',
 		'Cviebrock\EloquentSluggable\SluggableServiceProvider',
-		'Blog\Lists\SubscriptionListServiceProvider',
-		'Blog\Notifications\NotificationsServiceProvider',
-		'Blog\Helpers\StringHelperServiceProvider',
 		'Roumen\Feed\FeedServiceProvider',
-		'GrahamCampbell\Markdown\MarkdownServiceProvider'
+		'GrahamCampbell\Markdown\MarkdownServiceProvider',
+		'Blog\Lists\SubscriptionListServiceProvider',
+		'Blog\Helpers\StringHelperServiceProvider',
+		'Blog\Notifications\NotificationsServiceProvider',
 	),
 
 	/*
@@ -194,9 +194,9 @@ return array(
 		'URL'               => 'Illuminate\Support\Facades\URL',
 		'Validator'         => 'Illuminate\Support\Facades\Validator',
 		'View'              => 'Illuminate\Support\Facades\View',
-		'StringHelper'      => 'Blog\Facades\StringHelper',
 		'Feed'              => 'Roumen\Feed\Facades\Feed',
 		'Markdown' 			=> 'GrahamCampbell\Markdown\Facades\Markdown',
+		'StringHelper'		=> 'Blog\Facades\StringHelper'
 	),
 
 );

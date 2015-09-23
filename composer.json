@@ -8,7 +8,7 @@
 		"nesbot/Carbon": "*",
 		"mailchimp/mailchimp": "2.0.5",
 		"doctrine/dbal": "~2.3",
-		"roumen/feed": "dev-master",
+		"roumen/feed": "2.8.*",
 		"graham-campbell/markdown": "~2.0"
 	},
 	"require-dev": {

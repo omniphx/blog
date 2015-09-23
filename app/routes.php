@@ -53,3 +53,13 @@ Route::resource('type', 'TypesController',
 	array('only' => array('index', 'show')));
 
 Route::get('/feed', array('as' => 'feed', 'uses' => 'FeedController@index'));
+
+Route::get('/resume/', array('as' => 'subscribe', 'uses' => 'SubscriptionController@subscribe'));
+
+Route::get('resumes/matthew-mitchener-go-ahead-tours', function(){
+	return View::make('resumes.matthew-mitchener-go-ahead-tours');
+});
+
+Route::get('test', function(){
+	return StringHelper::upperCase('hello');
+});

@@ -13,7 +13,7 @@ gulp.task('concat', function() {
   	'./bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
   	'./app/assets/scripts/*.js'])
     .pipe(concat('built.js'))
-    .pipe(gulp.dest('./public/assets/scripts'))
+    .pipe(gulp.dest('./public/assets/scripts'));
 });
 
 gulp.task('uglify', function(){
@@ -28,7 +28,7 @@ gulp.task('less', function () {
     .pipe(less({
       paths: [ path.join(__dirname, 'less', 'includes') ]
     }))
-    .pipe(gulp.dest('./public/assets/styles'))
+    .pipe(gulp.dest('./public/assets/styles'));
 });
 
 gulp.task('compress', function(){
@@ -40,9 +40,7 @@ gulp.task('compress', function(){
 
 gulp.task('watch', function(){
 	gulp.watch('./app/assets/styles/*.less', ['less']);
-  gulp.watch('./app/assets/styles/*.less', ['compress']);
 	gulp.watch('./app/assets/scripts/extra.js', ['concat']);
-  gulp.watch('./app/assets/scripts/extra.js', ['uglify']);
 });
 
 gulp.task('default', ['concat','less','uglify','compress','watch']);
