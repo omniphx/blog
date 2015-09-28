@@ -617,8 +617,8 @@ dl em {
 
 <blockquote>
   <p><a href="/assets/pdfs/matthew-mitchener-go-ahead-tours.pdf">Download PDF</a><br />
-  <a href="mattjmitchener@gmail.com">mattjmitchener@gmail.com</a>
-  (617) 702-4789</p>
+  <a href="mattjmitchener@gmail.com">mattjmitchener@gmail.com</a> |
+  (617) 702-4789 <br/> <a href="http://www.mattmitchener.com">Website</a> | <a href="https://github.com/omniphx">Github</a></p>
 </blockquote>
 
 <hr />
@@ -634,60 +634,17 @@ dl em {
 <ul>
 <li><dl>
 <dt>Development</dt>
-<dd>Strong experience working with Salesforce architecture and design. Highly proficient with Apex and VisualForce markup. Competency writing triggers, unit tests, batchable apex, scheduled tasks. Strong experience with SOQL and SOSL queries.</dd>
+<dd>Strong experience working with Salesforce architecture and design. Fluent in Apex and VisualForce markup. Demonstrated competency with triggers, unit tests, batchable apex, scheduled tasks, and SOQL/SOSL queries.</dd>
 </dl></li>
 <li><dl>
 <dt>Administration</dt>
-<dd>Provide technical support and conduct trainings to over 1,000 users. Additionally, configure and manage third party tools such as FinancialForce, Pardot, Hubspot, and Clicktools.</dd>
+<dd>Provided technical support and trainings to over 1,000 Salesforce users. Managed and configured third party tools such as FinancialForce, Pardot, Hubspot, and Clicktools.</dd>
 </dl></li>
 <li><dl>
 <dt>Data migrations</dt>
-<dd>Proven track record of successfully deploying multiple data migrations from legacy systems through the dataloader, apex scripts and other import tools.</dd>
+<dd>Proven success record of deploying multiple data migrations from legacy systems. Used tools such as apex dataloader, apex scripts and other import tools.</dd>
 </dl></li>
 </ul>
-
-<hr />
-
-<h3 id="technical">Technical</h3>
-
-<ol>
-<li>Apex</li>
-<li>Visualforce</li>
-<li>SOQL/SOSL</li>
-<li>Version control: Git, SVN</li>
-<li>SOLID principles</li>
-<li>HTML, CSS3, JavaScript</li>
-<li>Bootsrap</li>
-<li>AngularJS</li>
-<li>Misc: PHP, Python</li>
-</ol>
-
-<hr />
-
-<dl>
-<dt><h3 id="certifications">Certifications</h3></dt>
-<dd>
-<p><em><a href="http://certification.salesforce.com/certification-detail?conId=003G000001KdPbHIAV">SFDC Certified Administer</a></em></p>
-</dd>
-
-<dd><em><a href="http://certification.salesforce.com/certification-detail?conId=003G000001KdPbHIAV">SFDC Certified Developer</a></em></dd>
-</dl>
-
-<hr />
-
-<h3 id="certifications">Courses</h3>
-
-<dl>
-<dt>Salesforce</dt>
-<dd><em>ADM 201</em>
-Administration Essentials for New Admins</dd>
-
-<dd><em>DEV 401</em>
-Building Applications with Force.com</dd>
-
-<dd><em>DEV 502</em>
-Integrating with Force.com</dd>
-</dl>
 
 <hr />
 
@@ -697,7 +654,7 @@ Integrating with Force.com</dd>
 <dt>Cultural Care Au Pair</dt>
 <dd><em>Junior Business Analyst</em>
 <strong>March 2013 – Present</strong>
-Implemenet Salesforce and non-Salesforce projects by working between business stakeholders and a team of global IT professionals. I perform quality assurance testing prior to production software releases. As well as provide technical support and training for over 1,000 employees. Demonstrated the ability to meet project deadlines and deliver quality results.</dd>
+Implement Salesforce and non-Salesforce projects by working between business stakeholders and a global development team. I perform quality assurance testing prior to production software releases. Demonstrated the ability to meet project deadlines and deliver quality results.</dd>
 
 <dd>
 <p><em>Inside Sales Coordinator</em>
@@ -718,6 +675,40 @@ Coordinated custom manufacturing projects between a quoting and finishing depart
 
 <hr />
 
+<h3 id="certifications">Courses</h3>
+
+<dl>
+<dt>Salesforce</dt>
+<dd><em>ADM 201</em>
+Administration Essentials for New Admins
+<br/><a href="http://certification.salesforce.com/certification-detail?conId=003G000001KdPbHIAV">SFDC Certified Administer</a></dd>
+
+<dd><em>DEV 401</em>
+Building Applications with Force.com
+<br/><a href="http://certification.salesforce.com/certification-detail?conId=003G000001KdPbHIAV">SFDC Certified Developer</a></dd>
+
+<dd><em>DEV 502</em>
+Integrating with Force.com</dd>
+</dl>
+
+<hr />
+
+<h3 id="technical">Technical</h3>
+
+<ol>
+<li>Apex</li>
+<li>Visualforce</li>
+<li>SOQL/SOSL</li>
+<li>Version control: Git, SVN</li>
+<li>SOLID principles</li>
+<li>HTML, CSS3, JavaScript</li>
+<li>Bootstrap</li>
+<li>AngularJS</li>
+<li>Misc: PHP, Python</li>
+</ol>
+
+<hr />
+
 <h3 id="awards">Awards</h3>
 
 <p>EF Education - Nominated for Most Innovative (2013)</p>
@@ -726,7 +717,9 @@ Coordinated custom manufacturing projects between a quoting and finishing depart
 
 <h3 id="footer">Footer</h3>
 
-<p>Matthew Mitchener &#8212; <a href="mattjmitchener@gmail.com">mattjmitchener@gmail.com</a> &#8212; (617) 702-4789</p>
+<p>Matthew Mitchener
+<br/><a href="mattjmitchener@gmail.com">mattjmitchener@gmail.com</a> | (617) 702-4789
+<br/><a href="http://www.mattmitchener.com">Website</a> | <a href="https://github.com/omniphx">Github</a></p>
 
 <hr />
 

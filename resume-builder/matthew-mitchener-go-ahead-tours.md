@@ -2,8 +2,8 @@
 ## SFDC Developer, Administrator
 
 > [Download PDF](/assets/pdfs/matthew-mitchener-go-ahead-tours.pdf)  
-> [mattjmitchener@gmail.com](mattjmitchener@gmail.com)
-> (617) 702-4789
+> [mattjmitchener@gmail.com](mattjmitchener@gmail.com) |
+> (617) 702-4789 <br/> [Website](http://www.mattmitchener.com) | [Github](https://github.com/omniphx)
 
 ------
 
@@ -16,56 +16,22 @@ I believe that any company’s success depends on its ability to adapt to a worl
 ### Skills {#skills}
 
 * Development
-  : Strong experience working with Salesforce architecture and design. Highly proficient with Apex and VisualForce markup. Competency writing triggers, unit tests, batchable apex, scheduled tasks. Strong experience with SOQL and SOSL queries.
+  : Strong experience working with Salesforce architecture and design. Fluent in Apex and VisualForce markup. Demonstrated competency with triggers, unit tests, batchable apex, scheduled tasks, and SOQL/SOSL queries.
 
 * Administration
-  : Provide technical support and conduct trainings to over 1,000 users. Additionally, configure and manage third party tools such as FinancialForce, Pardot, Hubspot, and Clicktools.
+  : Provided technical support and trainings to over 1,000 Salesforce users. Managed and configured third party tools such as FinancialForce, Pardot, Hubspot, and Clicktools.
 
 * Data migrations
-  : Proven track record of successfully deploying multiple data migrations from legacy systems through the dataloader, apex scripts and other import tools.
+  : Proven success record of deploying multiple data migrations from legacy systems. Used tools such as apex dataloader, apex scripts and other import tools.
 
 -------
-
-### Technical {#technical}
-
-1. Apex
-1. Visualforce
-1. SOQL/SOSL
-1. Version control: Git, SVN
-1. SOLID principles
-1. HTML, CSS3, JavaScript
-1. Bootsrap
-1. AngularJS
-1. Misc: PHP, Python
-
-------
-
-### Certifications {#certifications}
-
- 
-: *[SFDC Certified Administer](http://certification.salesforce.com/certification-detail?conId=003G000001KdPbHIAV)*
-: *[SFDC Certified Developer](http://certification.salesforce.com/certification-detail?conId=003G000001KdPbHIAV)*
-
-------
-
-### Courses {#certifications}
-
-Salesforce
-: *ADM 201*
-  Administration Essentials for New Admins
-: *DEV 401*
-  Building Applications with Force.com
-: *DEV 502*
-  Integrating with Force.com
-
-------
 
 ### Experience {#experience}
 
 Cultural Care Au Pair
 : *Junior Business Analyst*
   __March 2013 – Present__
-  Implemenet Salesforce and non-Salesforce projects by working between business stakeholders and a team of global IT professionals. I perform quality assurance testing prior to production software releases. As well as provide technical support and training for over 1,000 employees. Demonstrated the ability to meet project deadlines and deliver quality results.
+  Implement Salesforce and non-Salesforce projects by working between business stakeholders and a global development team. I perform quality assurance testing prior to production software releases. Demonstrated the ability to meet project deadlines and deliver quality results.
 
 : *Inside Sales Coordinator*
   __April 2012 – March 2013__
@@ -84,6 +50,34 @@ Fineline Prototyping
 
 ------
 
+### Courses {#certifications}
+
+Salesforce
+: *ADM 201*
+  Administration Essentials for New Admins
+  <br/>[SFDC Certified Administer](http://certification.salesforce.com/certification-detail?conId=003G000001KdPbHIAV)
+: *DEV 401*
+  Building Applications with Force.com
+  <br/>[SFDC Certified Developer](http://certification.salesforce.com/certification-detail?conId=003G000001KdPbHIAV)
+: *DEV 502*
+  Integrating with Force.com
+
+------
+
+### Technical {#technical}
+
+1. Apex
+1. Visualforce
+1. SOQL/SOSL
+1. Version control: Git, SVN
+1. SOLID principles
+1. HTML, CSS3, JavaScript
+1. Bootstrap
+1. AngularJS
+1. Misc: PHP, Python
+
+------
+
 ### Awards {#awards}
 
 EF Education - Nominated for Most Innovative (2013)
@@ -92,6 +86,8 @@ EF Education - Nominated for Most Innovative (2013)
 
 ### Footer {#footer}
 
-Matthew Mitchener -- [mattjmitchener@gmail.com](mattjmitchener@gmail.com) -- (617) 702-4789 
+Matthew Mitchener
+<br/>[mattjmitchener@gmail.com](mattjmitchener@gmail.com) | (617) 702-4789
+<br/>[Website](http://www.mattmitchener.com) | [Github](https://github.com/omniphx)
 
 ------
